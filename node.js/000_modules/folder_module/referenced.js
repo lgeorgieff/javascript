@@ -1,7 +1,7 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
 // Last modified: 07/03/2015
-// Description: Load some self-defined modules and check their members.
+// Description: Define one function that is exported as a module.
 // ====================================================================================================================
 
 // ====================================================================================================================
@@ -16,18 +16,4 @@
 // If not, see http://www.gnu.org/licenses/.
 // ====================================================================================================================
 
-var module = require('./module_definition.js');
-var assert = require('assert');
-
-assert(global.global_variable === 'global variable');
-assert(global.local_variable === undefined);
-assert(typeof module === 'function');
-
-var moduleInstance = new module();
-assert(typeof moduleInstance.fancy === 'function');
-assert(typeof moduleInstance.funky === 'function');
-
-
-var folderModule = require('./folder_module');
-assert(folderModule.referenced !== undefined);
-assert(folderModule.main !== undefined);
+module.exports = exports = function(){ console.log('Hello from referenced.js'); }

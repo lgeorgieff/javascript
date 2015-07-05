@@ -30,6 +30,8 @@ assert.equal(true, !!12);
 assert.equal('abc', 'abc');
 assert.equal(1, 1, 'Check assert.equal(1, 1)');
 assert.equal(12, '12');
+var obj = { };
+assert(obj, obj);
 
 
 // assert.notEqual() checks with the operator !=.
@@ -40,7 +42,7 @@ assert.notEqual({}, {});
 assert.notEqual([], []);
 
 
-// assert.equal() checks with the operator ===.
+// assert.strictEqual() checks with the operator ===.
 assert.strictEqual('abc', 'abc');
 assert.strictEqual(1, 1, 'Check assert.strictEqual(1, 1)');
 assert.strictEqual(true, !!12);
@@ -68,12 +70,14 @@ try {
 assert(errorThrown, 'Check assert equal on objects');
 
 assert.deepEqual({}, {});
+assert.deepEqual({value: {value: 123}}, {value: {value: '123'}}
+);
 assert.deepEqual([1, 2, 3], ['1', '2', '3']);
 
 
 // assert.notDeepEqual() checks objects for unequality.
 assert.notDeepEqual(12, 13);
-assert.notDeepEqual({}, { tmp: 12 });
+assert.notDeepEqual({}, {value: 12});
 assert.notDeepEqual([1, 2, 3], [2, 3, 4]);
 
 
@@ -90,7 +94,7 @@ assert.doesNotThrow(function() { });
 assert.doesNotThrow(function() { }, 'Check assert.doesNotThrow(function() { })');
 
 
-// assert.ifError(value) throws an error if the gieven value is true.
+// assert.ifError(value) throws an error if the given value is true.
 assert.ifError(false);
 assert.ifError(undefined);
 

@@ -29,8 +29,10 @@ Steps out of the current scope/function of the JavaScript code when entered into
 # backtrace (bt)
 Prints the backtrace of the current execution frame when entered into the debugger terminal.
 
-# setBreakPoint (sb)
-# clearBreakPoint (cb)
+# setBreakpoint (sb)
+
+
+# clearBreakpoint (cb)
 # watch
 # unwatch
 # watchers
@@ -43,8 +45,8 @@ Restarts the execution of the current script (works only if a script is running 
 # kill
 Ends the execution of the current script when entered into the debugger terminal.
 
-# list(n)
-Prints the current line where the debugger stopped and n lines before and after the current line when entered into the debugger terminal. If list is called without any n, i.e. _list()_ the default is _list(5)_.
+# list
+_list(n)_ prints the current line where the debugger stopped and n lines before and after the current line when entered into the debugger terminal. If list is called without any n, i.e. _list()_ the default is _list(5)_.
 
 # scripts
 Lists all loaded scripts when entered into the debugger terminal.

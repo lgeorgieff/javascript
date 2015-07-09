@@ -12,23 +12,46 @@ The next chapters describe the options that are available in the debugger, i.e. 
 Print a message that contains all available options/commands. Usually the set of options that is described in the following chapters.
 
 # run (r)
+Starts the execution of the current script when entered into the debugger terminal. This is the default when the debugger is started. But can be useful after the _kill_ command was called.
+
 # cont (c)
-Continue execution until the next breakpoint is reached.
+Continues execution until the next breakpoint is reached when entered into the debugger terminal.
 
 # next (n)
+Steps to the next statement of the JavaScript code when entered into the debugger terminal.
+
 # step (s)
+Steps into the current statement of the JavaScript code when entered into the debugger terminal.
+
 # out (o)
+Steps out of the current scope/function of the JavaScript code when entered into the debugger terminal. for an example take a look at [out.js](out.js).
+
 # backtrace (bt)
+Prints the backtrace of the current execution frame when entered into the debugger terminal.
+
 # setBreakPoint (sb)
 # clearBreakPoint (cb)
 # watch
 # unwatch
 # watchers
 # repl
+Enters into the debugger's repl for evaluation of the current script/context when entered into the debugger terminal.
+
 # restart
+Restarts the execution of the current script (works only if a script is running and not stopped at the moment the command is entered) when entered into the debugger terminal.
+
 # kill
-# list
+Ends the execution of the current script when entered into the debugger terminal.
+
+# list(n)
+Prints the current line where the debugger stopped and n lines before and after the current line when entered into the debugger terminal. If list is called without any n, i.e. _list()_ the default is _list(5)_.
+
 # scripts
+Lists all loaded scripts when entered into the debugger terminal.
+
 # breakOnException
 # breakpoints
+Displays a list of all breakpoints when entered into the debugger terminal.
+
 # version
+Displays the version of v8 when entered into the debugger terminal.

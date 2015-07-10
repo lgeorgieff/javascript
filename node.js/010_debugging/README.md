@@ -42,8 +42,13 @@ Clears a breakpoint in the JavaScript code when entered into the debugger termin
 * clearBreakpoint(line), cb(line): clear the breakpoint in line _line_
 
 # watch
+Shows the value of the defined expression in the watch when entered into the debugger terminal. The expression is passed as a string, e.g. watch('myVariable').
+
 # unwatch
+Deletes a defined watch when entered into the debugger terminal. The expression is passed as a string, e.g. unwatch('myVariable').
+
 # watchers
+Lists all defined watchers when entered into the debugger terminal.
 # repl
 Enters into the debugger's repl for evaluation of the current script/context when entered into the debugger terminal.
 
@@ -59,7 +64,6 @@ _list(n)_ prints the current line where the debugger stopped and n lines before 
 # scripts
 Lists all loaded scripts when entered into the debugger terminal.
 
-# breakOnException
 # breakpoints
 Displays a list of all breakpoints when entered into the debugger terminal.
 

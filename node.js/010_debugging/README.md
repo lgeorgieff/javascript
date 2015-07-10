@@ -35,10 +35,12 @@ Sets a breakpoint in the JavaScript code when entered into the debugger terminal
 * setBreakpoint(line), sb(line): set a breakpoint in line _line_
 * setBreakpoint('my_fun()'), sb('my_fun()'): set a breakpoint in the first line of the function _my&#95;fun_
 * setBreakpoint('script.js', n), sb('script.js', n): set a breakpoint in line _n_ in the script _script.js_
+
+# clearBreakpoint (cb)
+Clears a breakpoint in the JavaScript code when entered into the debugger terminal. The following possibilities of clearing breakpoints exist:
 * clearBreakpoint(), cb(): clear the breakpoint in the current line
 * clearBreakpoint(line), cb(line): clear the breakpoint in line _line_
 
-# clearBreakpoint (cb)
 # watch
 # unwatch
 # watchers

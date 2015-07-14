@@ -62,3 +62,5 @@ Since the closure compiler renames global variables that are referenced and expo
  * An example script is available [advanced&#95;optimizations&#95;quoted&#95;strings.js
 ](advanced_optimizations_quoted_strings.js)
 * "Referring to variables as properties of the global object" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
+ * An example script is available [advanced&#95;optimizations&#95;global&#95;properties.js
+](advanced_optimizations_global_properties.js)

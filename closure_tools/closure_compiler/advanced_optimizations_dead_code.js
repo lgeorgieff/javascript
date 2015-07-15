@@ -32,3 +32,38 @@ function referenced_code() {
 }
 
 referenced_code();
+
+
+// Define a prototype with the properties start, stop, isDriving.
+/**
+ * @constructor
+ */
+function Car(){
+    this._isDriving = false;
+};
+
+Car.prototype.start = function() {
+    this._isDriving = true;
+};
+
+Car.prototype.stop = function() {
+    this._isDriving = false;
+};
+
+Car.prototype.isDriving = function() {
+    return this._isDriving;
+};
+
+// Create an object of the prototype Car.
+var x6 = new Car();
+
+// Call all properties of the prototype Car by using a for loop.
+// This will lead to code elimination, i.e. all properties of Car are deleted calling them this way.
+for(var prop in Car.prototype) {
+    console.log(prop + ': ' + Car.prototype[prop].call(x6));
+}
+
+// If the properties are called like the following code snippet demonstrates, the code is not eliminated.
+//x6.start();
+//x6.stop();
+//console.log(x6.isDriving());

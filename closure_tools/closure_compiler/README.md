@@ -59,8 +59,10 @@ Since the closure compiler renames global variables that are referenced and expo
 * "[...] undeclared external references" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
 * "[...] unexported internal names in external code" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
 * "[...] string names to refer to object properties" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
- * An example script is available [advanced&#95;optimizations&#95;quoted&#95;strings.js
+ * An example script is available at [advanced&#95;optimizations&#95;quoted&#95;strings.js
 ](advanced_optimizations_quoted_strings.js)
 * "Referring to variables as properties of the global object" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
- * An example script is available [advanced&#95;optimizations&#95;global&#95;properties.js
+ * An example script is available at [advanced&#95;optimizations&#95;global&#95;properties.js
 ](advanced_optimizations_global_properties.js)
+* Dead code elimination
+ * Two example scripts are available at [advanced&#95;optimizations&#95;dead&#95;code.js](advanced_optimizations_dead_code.js) and [reference&#95;dead&#95;code.js](reference_dead_code.js).

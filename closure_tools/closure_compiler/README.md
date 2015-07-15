@@ -65,4 +65,6 @@ Since the closure compiler renames global variables that are referenced and expo
  * An example script is available at [advanced&#95;optimizations&#95;global&#95;properties.js
 ](advanced_optimizations_global_properties.js)
 * Dead code elimination
+ * "Calling  functions from outside of compiled code" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
+ * "Retrieving functions through iteration over constructor or prototype properties" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
  * Two example scripts are available at [advanced&#95;optimizations&#95;dead&#95;code.js](advanced_optimizations_dead_code.js) and [reference&#95;dead&#95;code.js](reference_dead_code.js).

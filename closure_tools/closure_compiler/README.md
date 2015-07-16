@@ -26,14 +26,14 @@ For automatation or integration of the closure compiler into your (build) system
 Google provides a [documentation](https://developers.google.com/closure/compiler/docs/compilation_levels) on the compilation levels of the closure compiler.
 
 There are three compilation levels:
-* WHITESPACE_ONLY
+* _WHITESPACE&#95;ONLY_
  * Removes whitespace, comments and unnecessary punctuation characters only
-* SIMPLE_OPTIMIZATIONS
- * Includes WHITESPACE_ONLY
+* _SIMPLE&#95;OPTIMIZATIONS_
+ * Includes _WHITESPACE&#95;ONLY_
  * Renames local variables, funciton parameters to shorter names
  * Can be problematic when using _eval_, _with_ or _toString()_ on functions
-* ADVANCED_OPTIMIZATIONS
- * Includes SIMPLE_OPTIMIZATIONS
+* _ADVANCED&#95;OPTIMIZATIONS_
+ * Includes _SIMPLE&#95;OPTIMIZATIONS_
  * Renames global variables function names and properties
   * Externals and referenced globals must be exposed to the compiler
   * Exported globals must be exposed to the compiler
@@ -41,9 +41,9 @@ There are three compilation levels:
  * Inlining: replaces function calls, constants and some variables with their body if it determines that it is save to do so
 
 You can set the compilation level by the option _--compilation&#95;level_, i.e.
-* --compilation&#95;level=WHITESPACE_ONLY
-* --compilation&#95;level=SIMPLE or --compilation&#95;level=SIMPLE&#95;OPTIMIZATIONS
-* --compilation&#95;level=ADVANCED or --compilation&#95;level=ADVANCED&#95;OPTIMIZATIONS
+* _--compilation&#95;level=WHITESPACE&#95;ONLY_
+* _--compilation&#95;level=SIMPLE or --compilation&#95;level=SIMPLE&#95;OPTIMIZATIONS_
+* _--compilation&#95;level=ADVANCED or --compilation&#95;level=ADVANCED&#95;OPTIMIZATIONS_
 
 The default compilation level is _SIMPLE_/_SIMPLE&#95;OPTIMIZATIONS_
 

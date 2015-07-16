@@ -54,7 +54,7 @@ To suppress particular errors you can use a whitelist file. The errors specifed 
 
 The _--warning&#95;level_ option can also be used for "normal" compilation.
 
-# Restrictions for ADVANCED_OPTIMIZATIONS
+# Restrictions of ADVANCED_OPTIMIZATIONS
 Since the closure compiler renames global variables that are referenced and exported you need to take care of:
 * "[...] undeclared external references" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
 * "[...] unexported internal names in external code" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]

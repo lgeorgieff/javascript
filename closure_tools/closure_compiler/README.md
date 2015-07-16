@@ -68,3 +68,5 @@ Since the closure compiler renames global variables that are referenced and expo
  * "Calling  functions from outside of compiled code" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
  * "Retrieving functions through iteration over constructor or prototype properties" [[Google Developers](https://developers.google.com/closure/compiler/docs/limitations)]
  * Two example scripts are available at [advanced&#95;optimizations&#95;dead&#95;code.js](advanced_optimizations_dead_code.js) and [reference&#95;dead&#95;code.js](reference_dead_code.js).
+* Object property flattening
+ * An exmaple script is available at [advanced&#95;optimizations&#95;object&#95;property&#95;flattening.js](advanced_optimizations_object_property_flattening.js)

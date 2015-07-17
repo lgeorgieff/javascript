@@ -70,3 +70,8 @@ Since the closure compiler renames global variables that are referenced and expo
  * Two example scripts are available at [advanced&#95;optimizations&#95;dead&#95;code.js](advanced_optimizations_dead_code.js) and [reference&#95;dead&#95;code.js](reference_dead_code.js).
 * Object property flattening
  * An exmaple script is available at [advanced&#95;optimizations&#95;object&#95;property&#95;flattening.js](advanced_optimizations_object_property_flattening.js)
+
+# Exports and Externs
+Exported functionality and externs are required to be compatible to non-compiled JavaScript code, i.e. we have to ensure that certain values, classes, functions, etc. are not renamed by the closure compiler.
+
+[This](advanced_optimizations_export.js) example shows how to export a function in the ADVANCED_OPTIMIZATIONS level as Node.js module. For a full documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#dangers).

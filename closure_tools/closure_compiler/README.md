@@ -75,3 +75,7 @@ Since the closure compiler renames global variables that are referenced and expo
 Exported functionality and externs are required to be compatible to non-compiled JavaScript code, i.e. we have to ensure that certain values, classes, functions, etc. are not renamed by the closure compiler.
 
 [This](advanced_optimizations_export.js) example shows how to export a function in the _ADVANCED&#95;OPTIMIZATIONS_ level as Node.js module. For a full documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#dangers).
+
+## External-To-Compiled Code
+
+## Compiled-To-External Code

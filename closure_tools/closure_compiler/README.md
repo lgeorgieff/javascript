@@ -88,3 +88,6 @@ For the entire documentation take a look at [Google Developers](https://develope
 
 ## Define a Node.js Module
 Now since we have the possbility to use external values and to export internal values we can implement a clean solution of exposing functionality as a Node.js module. For this we have to make the _module.exports_ object property visible to the closure compiler by passing it through an [externs file](externs.js). In the [compiled script](advanced_optimizations_export_2.js) we finally export the functionality to the _module.exports_ object property by using a quoted string as property name. This way of exposing functionality as a Node.js module is much cleaner as the first shown example when using a warning whitelist file.
+
+# JSDoc Annotations Used by the Closure Compiler
+TODO

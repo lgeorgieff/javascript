@@ -75,6 +75,14 @@ Since the closure compiler renames global variables that are referenced and expo
 Exported functionality and externs are required to be compatible to non-compiled JavaScript code, i.e. we have to ensure that certain values, classes, functions, etc. are not renamed by the closure compiler.
 
 ## External-To-Compiled Code (Exports)
-[This](advanced_optimizations_export.js) example shows how to export a function in the _ADVANCED&#95;OPTIMIZATIONS_ level as Node.js module. For a full documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#dangers).
+[This](advanced_optimizations_export.js) example shows how to export a function in the _ADVANCED&#95;OPTIMIZATIONS&#95; level_ as Node.js module. For a full documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#dangers).
 
 ## Compiled-To-External Code (Externs)
+When using original-named symbols from non-compiled JavaScript source files you can provide the declations of these used sources inside a so-called externs file by using the _--externs_ switch.
+
+The files [advanced&#95;optimizations&#95;externs.js](advanced_optimizations_externs.js) and [externs.js](externs.js) illustrate an example how to use external symbols, e.g. functions and values from non-compiled in compiled code.
+
+For the entire documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#mixed).
+
+
+TODO: --use_only_custom_externs

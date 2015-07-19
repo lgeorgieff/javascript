@@ -21,10 +21,15 @@
 
 // Define a function that can be referenced inside a compiled JavaScript source file when this file is included via
 // the --externs switch.
+// The function does not need to be fully defined, i.e. an empty function body is fine for us, since we will have to
+// provide the entire implementation for the final production code later.
 function external_function() {}
 
 // Define an object with the property 'property' that can be referenced inside a compiled JavaScript source file when
 // this file is included via the --externs switch.
+// We do not have to provide the full object implementation. The referenced parts in the compiled JavaScript source
+// are enough. But for the production code we have to provide an implementation for every used property of this
+// object.
 var external_object = {
     property: 123
 };

@@ -82,9 +82,9 @@ When using original-named symbols from non-compiled JavaScript source files you 
 
 The files [advanced&#95;optimizations&#95;externs.js](advanced_optimizations_externs.js) and [externs.js](externs.js) illustrate an example how to use external symbols, e.g. functions and values from non-compiled in compiled code.
 
+By default the closure compiler uses some pre-defined externs that are located in the files [here](https://github.com/google/closure-compiler/tree/master/externs). To prevent the closure compiler to use them and to use only the self-defined externs use the _--use&#95;only&#95;custom&#95;externs_ switch.
+
 For the entire documentation take a look at [Google Developers](https://developers.google.com/closure/compiler/docs/api-tutorial3#mixed).
 
 ## Define a Node.js Module
 Now since we have the possbility to use external values and to export internal values we can implement a clean solution of exposing functionality as a Node.js module. For this we have to make the _module.exports_ object property visible to the closure compiler by passing it through an [externs file](externs.js). In the [compiled script](advanced_optimizations_export_2.js) we finally export the functionality to the _module.exports_ object property by using a quoted string as property name. This way of exposing functionality as a Node.js module us much cleaner as the first shown example when using a warning whitelist file.
-
-TODO: --use_only_custom_externs

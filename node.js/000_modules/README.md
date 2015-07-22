@@ -34,3 +34,6 @@ To prevent long loading times of Node.js modules, every required module is cache
 An example file is available at [caching.js](caching.js). It is loaded in the file [module_loading.js](module_loading.js).
 
 For a full documentation take a look at [https://nodejs.org/api/modules.html#modules_caching](https://nodejs.org/api/modules.html#modules_caching).
+
+## Defining Global and Module Variables Inside a Module
+for more information and an example take a look at: [Module Scope](https://github.com/lgeorgieff/javascript/blob/master/node.js/040_globals/README.md#module-scope) and [Define a Global Variable in a Module Scope](https://github.com/lgeorgieff/javascript/blob/master/node.js/040_globals/README.md#define-a-global-variable-in-a-module-scope).

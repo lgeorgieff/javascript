@@ -90,7 +90,19 @@ For the entire documentation take a look at [Google Developers](https://develope
 Now since we have the possbility to use external values and to export internal values we can implement a clean solution of exposing functionality as a Node.js module. For this we have to make the _module.exports_ object property visible to the closure compiler by passing it through an [externs file](externs.js). In the [compiled script](advanced_optimizations_export_2.js) we finally export the functionality to the _module.exports_ object property by using a quoted string as property name. This way of exposing functionality as a Node.js module is much cleaner as the first shown example when using a warning whitelist file.
 
 ## Node.js Closure compiler Externs
-TODO: https://github.com/dcodeIO/node.js-closure-compiler-externs
+#TODO: https://github.com/dcodeIO/node.js-closure-compiler-externs
 
 # JSDoc Annotations Used by the Closure Compiler
-TODO: https://developers.google.com/closure/compiler/docs/js-for-compiler
+The closure compiler is able to use [JSDoc](http://usejsdoc.org/) annotations to improve the optimization and the error and warning output.
+
+JSDoc is a tool for generating JavaScript documentation from comments in a special format. Since it is not possible to define variable types in JavaScript the only way doing this is via comments. These comments can be used by the closure compiler as additional information.
+
+The list of supported JSDoc tags by the closure compiler is available at the [Google Developers documentation](https://developers.google.com/closure/compiler/docs/js-for-compiler#tags).
+
+The closure compiler also supports the following [type expressions](https://developers.google.com/closure/compiler/docs/js-for-compiler#types) to define the type of a variable.
+
+In addition to the "normal" type annotations the closure compiler also supports [generic types](https://developers.google.com/closure/compiler/docs/js-for-compiler#generics) which are equal to what is known as templates or generics.
+
+More examples on JSDoc are available [here](../../jsdoc/README.md).
+
+#TODO: add simple example.

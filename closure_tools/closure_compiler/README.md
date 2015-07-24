@@ -116,3 +116,6 @@ In addition to the "normal" type annotations the closure compiler also supports 
 More examples on JSDoc are available [here](../../jsdoc/README.md).
 
 You find a simple example script at [jsdoc_annotations.js](jsdoc_annotations.js).
+
+# Reasons to Avoid the Closure compiler in ADVANCED_OPTIMIZATIONS Mode
+[This article](http://webreflection.blogspot.de/2013/01/5-reasons-to-avoid-closure-compiler-in.html) describes why not to use the closure compiler in advanced mode. Well I have a different opinion since for every problem that is mentioned there a solution exists. Indeed, you have to think about the way you code and adopt it to the closure compiler. You should think aboud what you want to gain from the closure compiler, what you really get and what you have to invest!

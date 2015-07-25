@@ -26,6 +26,6 @@ The following values are available in the module scope:
 * exports (which is a reference to module.exports)
 
 ## Define a Global Variable in a Module Scope
-Global variables can be defined in a module by using the global object, for example _global.MY_GLOBAL = 123;_ If using _var my_local = 123;_ in module scope, it is available only in the module and can be used as within a closure.
+Global variables can be defined in a module by using the global object, for example _global.MY&#95;GLOBAL = 123;_ If using _var my&#95;local = 123;_ in module scope, it is available only in the module and can be used as within a closure.
 
 An example is available at [module.js](module.js) and [main.js](main.js).

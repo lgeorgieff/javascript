@@ -33,7 +33,7 @@ Prints the backtrace of the current execution frame when entered into the debugg
 Sets a breakpoint in the JavaScript code when entered into the debugger terminal. The following possibilities of setting breakpoints exist:
 * setBreakpoint(), sb(): set a breakpoint in the current line
 * setBreakpoint(line), sb(line): set a breakpoint in line _line_
-* setBreakpoint('my_fun()'), sb('my_fun()'): set a breakpoint in the first line of the function _my&#95;fun_
+* setBreakpoint('my&#95;fun()'), sb('my&#95;fun()'): set a breakpoint in the first line of the function _my&#95;fun_
 * setBreakpoint('script.js', line), sb('script.js', line): set a breakpoint in line _line_ in the script _script.js_
 
 # clearBreakpoint (cb)

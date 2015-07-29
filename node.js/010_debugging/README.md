@@ -69,3 +69,8 @@ Displays a list of all breakpoints when entered into the debugger terminal.
 
 # version
 Displays the version of v8 when entered into the debugger terminal.
+
+# Useful Modules
+In addition to the Node.js/V8 debugger there are also some Node.js moduels and functions which can be useful for debugging:
+* [util](../050_utilities/README.md), especially the [degublog](../050_utilities/README.md#utildebuglogsection) function
+* [console](https://nodejs.org/api/console.html)

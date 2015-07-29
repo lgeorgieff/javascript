@@ -37,4 +37,6 @@ You find an example script at [inspect.js](inspect.js).
 
 It is also possible to define a method called _inspect(depths, options)_ on an object. This method will be used by the _util.inspect_ function if _customInspect_ is set to true (the default).
 
+Via the properties _util.inspect.styles_ and _util.inspect.colors_ it is possible to influence the color settings of the returned string from _util.inspect_ if _colors_ is set to _true_.
+
 The _console_ object offers the method [_console.dir(object, [options])_](https://nodejs.org/api/console.html#console_console_dir_obj_options). This method uses the _util.inspect_ function to print the string representation of the given object to the console.

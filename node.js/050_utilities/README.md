@@ -24,3 +24,17 @@ If there are too many placeholders, i.e. they cannot consume any arguments, the 
 If there are too many arguments, i.e. they cannot be consumed, the remaining arguments are returned as strings. The used string values for these arguments are created by _util.inspect()_.
 
 You find an example script at [format.js](format.js).
+
+# util.inspect(object, [options])
+The _inspect_ function returns a string representing the passed object. It is possible to define several options that affect the resulting string value.
+The following options are available:
+* showHidden
+* depth
+* colors
+* customInspect
+
+You find an example script at [inspect.js](inspect.js).
+
+It is also possible to define a method called _inspect(depths, options)_ on an object. This method will be used by the _util.inspect_ function if _customInspect_ is set to true (the default).
+
+The _console_ object offers the method [_console.dir(object, [options])_](https://nodejs.org/api/console.html#console_console_dir_obj_options). This method uses the _util.inspect_ function to print the string representation of the given object to the console.

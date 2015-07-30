@@ -40,3 +40,14 @@ It is also possible to define a method called _inspect(depths, options)_ on an o
 Via the properties _util.inspect.styles_ and _util.inspect.colors_ it is possible to influence the color settings of the returned string from _util.inspect_ if _colors_ is set to _true_.
 
 The _console_ object offers the method [_console.dir(object, [options])_](https://nodejs.org/api/console.html#console_console_dir_obj_options). This method uses the _util.inspect_ function to print the string representation of the given object to the console.
+
+#util.isX(object)
+The util module also provides several functions to check the type of an object:
+* _util.isArray(object)_
+* _util.isRegExp(object)_
+* _util.isDate(object)_
+* _util.isError(object)_
+
+All of these functions return either _true_ if the passed value corresponds to the checked type or _false_ if the passed value does not correspond to the passed object.
+
+You find an example script at [isX.js](isX.js).

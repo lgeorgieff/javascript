@@ -69,8 +69,8 @@ You can find an example script at [deprecate.js](deprecate.js).
 # Deprecated Functions
 The following functions are available in the _util_ module but are deprecated and should not be used.
 
-* util.debug(string)
-* util.error([...])
-* util.puts([...])
-* util.print([...])
-* util.pump(readableStream, writableStream[, callback])
+* _util.debug(string)_
+* _util.error([...])_
+* _util.puts([...])_
+* _util.print([...])_
+* _util.pump(readableStream, writableStream[, callback])_

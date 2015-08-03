@@ -1,6 +1,8 @@
 # Util
 The _util_ module contains functionality that can be used to support the internal APIs of Node.js or of any other module. To use it you can call _require('util');_
 
+The entire documentation is available at [nodejs.org](https://nodejs.org/api/util.html).
+
 # util.debuglog(section)
 The function _debuglog_ can be used to print some logging information that is bound to a so-called section, i.e. a debuglog is initialized with a string value, e.g.
 ```javascript
@@ -9,7 +11,7 @@ debuglog('My logging information');
 ```
 
 To activate the particular _init_ debuglog from the example you have to invoke the Node.js process with _NODE_DEBUG=init node my_script.js_.
-You can also use multiple debuglogs. Each with a different name. Far activating all of them you can specify their names spearated by commas to _NODE_DEBUG_.
+You can also use multiple debuglogs. Each with a different name. Far activating all of them you can specify their names spearated by commas to _NODE&#95;DEBUG_.
 
 You can find an example script at [debuglog.js](debuglog.js).
 
@@ -51,3 +53,24 @@ The util module also provides several functions to check the type of an object:
 All of these functions return either _true_ if the passed value corresponds to the checked type or _false_ if the passed value does not correspond to the passed object.
 
 You can find an example script at [isX.js](isX.js).
+
+# util.inherits(derivedType, superType)
+This function can be used to extend a derived type from a super type, i.e. the super type's prototype methods are inherited to the derived type. In addition the property _derivedInstance.constructor.super&#95;_ is set to the super type.
+
+You can find an example script at [inherits.js](inherits.js).
+
+# util.deprecate(function, string)
+Marks the given function as deprecated, i.e. this function returns a modified version of the given function that prints the given string as message/warning before the actual function is called.
+* If --no-deprecation is set, the returned function is a NO-OP.
+* If --throw-deprecation is set, Node.js will throw an exception if the returned function is used.
+
+You can find an example script at [deprecate.js](deprecate.js).
+
+# Deprecated Functions
+The following functions are available in the _util_ module but are deprecated and should not be used.
+
+* util.debug(string)
+* util.error([...])
+* util.puts([...])
+* util.print([...])
+* util.pump(readableStream, writableStream[, callback])

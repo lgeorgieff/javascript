@@ -9,6 +9,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
  1. [globals](node.js/040_globals/README.md)
  1. [util](node.js/050_utilities/README.md)
  1. [events](node.js/060_events/README.md)
+ 1. [console](node.js/150_console/README.md)
 
 ## Closure Compiler
 Google's closure compiler is a JavaScript to JavaScript compiler. It generates a much smaller code version of the input files. It can be used for performace improvement but also for error checking.

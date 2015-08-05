@@ -61,6 +61,10 @@ console.log('=== console.time ===========');
 console.time('task 0');
 console.time('task 1');
 console.timeEnd('task 0');
+console.timeEnd('task 0');
+setTimeout(function () {
+    console.timeEnd('task 0');
+}, 2);
 console.timeEnd('task 1');
 assert.throws(function(){ console.timeEnd('task 2'); }, Error,
               'console.timeEnd(\'task 2\'); must throw an error since no corresponding console.time call is defined!');

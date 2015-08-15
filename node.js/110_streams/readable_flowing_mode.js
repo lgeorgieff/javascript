@@ -25,7 +25,9 @@ var ADD_DATA_HANDLER = 0;
 var USE_RESUME = 1;
 var USE_PIPE = 2;
 
-var SHOW_EXAMPLE = USE_PIPE;
+var SHOW_EXAMPLE = ADD_DATA_HANDLER;
+if (process.argv.length === 3 && !isNaN(process.argv[2]))
+    SHOW_EXAMPLE = Number(process.argv[2]);
 
 if (SHOW_EXAMPLE === ADD_DATA_HANDLER) {
     // When registering a data handler the stream is set to flowing mode.

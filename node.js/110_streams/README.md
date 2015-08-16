@@ -1,0 +1,25 @@
+Streams are an abstraction of handling incoming and outgoing data in a (Node.js) application. Examples are access to the console (_process.stdin_ and _process.stdout_), HTTP requests, ...
+
+There are several types of streams in Node.js:
+* Readable streams
+* Writeable streams
+* Duplex streams
+* Transform streams
+
+Streams in Node.js are [EventEmitters](https://github.com/lgeorgieff/javascript/blob/master/node.js/060_events/README.md). If a stream is readable, it implements all functionality of _Readable_. If a stream is writable, it implements all functionality of _Writeable_. Thus, a _Duplex_ or _Transform_ stream implements both _Readable_ and _Writeable_.
+
+#Readable Streams
+Readable streams can be used to consume/read data from a source, e.g. the console (_process.stdin_). It is not possible to write into a _Readable_.
+
+Readable streams operate in two modes:
+ 1. _flowing mode_: The data is read from the source and can be read by your registered _data_ event handlers. If no _data_ event handlers are registered and data is available in _flowing mode_, it is lost.
+ 2. _paused mode_: The data can be read by explicitly calling _stream.read()_.
+ 
+## Switching to Flowing Mode
+* Add a _data_ event handler
+* Call the _stream.resume()_ method
+* Call the _stream.pipe()_ method
+ 
+## Switching to Paused Mode
+* Call the _stream.pause()_ method (works only if no pipe destinations and _data_ event handlers are existing on the readable stream)
+ 

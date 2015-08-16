@@ -8,6 +8,8 @@ There are several types of streams in Node.js:
 
 Streams in Node.js are [EventEmitters](https://github.com/lgeorgieff/javascript/blob/master/node.js/060_events/README.md). If a stream is readable, it implements all functionality of _Readable_. If a stream is writable, it implements all functionality of _Writeable_. Thus, a _Duplex_ or _Transform_ stream implements both _Readable_ and _Writeable_.
 
+The full description of this API is available at the Node.js [documentation](https://nodejs.org/api/stream.html).
+
 #Readable Streams
 Readable streams can be used to consume/read data from a source, e.g. the console (_process.stdin_). It is not possible to write into a _Readable_.
 
@@ -28,3 +30,13 @@ An example script is available at [readable_flowing_mode.js](readable_flowing_mo
 In paused mode you can use the method _stream.read([size])_ to get the data of the stream's internal buffer.
 
 An example script is available at [readable_paused_mode.js](readable_paused_mode.js).
+
+## Events
+Node.js readable streams implement the [EventEmitter](https://github.com/lgeorgieff/javascript/blob/master/node.js/060_events/README.md) API and offer the following events:
+* _readable_
+* _data_
+* _end_
+* _closed_
+* _error_
+
+An example script is available at [readable_events.js](readable_events.js).

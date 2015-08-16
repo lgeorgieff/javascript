@@ -21,5 +21,5 @@ Readable streams operate in two modes:
 * Call the _stream.pipe()_ method
  
 ## Switching to Paused Mode
-* Call the _stream.pause()_ method (works only if no pipe destinations and _data_ event handlers are existing on the readable stream)
+* Call the _stream.pause()_ method (guaranteed only if no pipe destinations and _data_ event handlers are existing on the readable stream - currently (Node.js 0.12.7) works also without removing the pipe destinations and _data_ event handlers)
  

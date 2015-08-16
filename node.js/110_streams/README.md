@@ -19,7 +19,12 @@ Readable streams operate in two modes:
 * Add a _data_ event handler
 * Call the _stream.resume()_ method
 * Call the _stream.pipe()_ method
+
+An example script is available at [readable_flowing_mode.js](readable_flowing_mode.js).
  
 ## Switching to Paused Mode
 * Call the _stream.pause()_ method (guaranteed only if no pipe destinations and _data_ event handlers are existing on the readable stream - currently (Node.js 0.12.7) works also without removing the pipe destinations and _data_ event handlers)
- 
+
+In paused mode you can use the method _stream.read([size])_ to get the data of the stream's internal buffer.
+
+An example script is available at [readable_paused_mode.js](readable_paused_mode.js).

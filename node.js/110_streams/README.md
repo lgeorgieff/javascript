@@ -46,8 +46,8 @@ An example script is available at [readable_events.js](readable_events.js).
 * _readable.setEncoding(encoding)_: Set the encoding for the stream's buffer, e.g. _'utf8'_.
 * _readable.resume()_: Will set the stream's mode into _flowing mode_, i.e. the stream will start to emit _data_ events.
 * _readable.pause()_: Will set the stream into _paused mode_.
-* _readable.isPaused()_: Returns a boolean indicating whether a stream was set explicitly to _paused_ or not.
+* _readable.isPaused()_: Returns a boolean indicating whether a stream was set explicitly to _paused mode_ or not.
 * _readable.pipe(destination [, options])_: Forwards/writes the data from the readable stream into the writeable stream passed as destination.
-* _readable.unpipe([destination])_: Remove the pipe to the passed destination. If no destination is specified, all pipes are removed.
-* _readable.unshift(chunk)_: The given chunk is pushed back to the internal stream buffer.
-* _readable.wrap(stream)_: For compatibility reasons to old Node.js (< 0.10.0) streams.
+* _readable.unpipe([destination])_: Removes the pipe from the readabe stream to the passed destination. If no destination is specified, all pipes are removed.
+* _readable.unshift(chunk)_: The given chunk is pushed back into the internal stream buffer.
+* _readable.wrap(stream)_: Wraps a stream object from old Node.js (< 0.10.0) libraries for compatibility reasons.

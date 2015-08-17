@@ -51,3 +51,17 @@ An example script is available at [readable_events.js](readable_events.js).
 * _readable.unpipe([destination])_: Removes the pipe from the readabe stream to the passed destination. If no destination is specified, all pipes are removed. An example is available at [readable_multiple_pipes.js](readable_multiple_pipes.js).
 * _readable.unshift(chunk)_: The given chunk is pushed back into the internal stream buffer.
 * _readable.wrap(stream)_: Wraps a stream object from old Node.js (< 0.10.0) libraries for compatibility reasons.
+
+
+#Writable Streams
+Writable streams can be used to write data to a source, e.g. the console (_process.stdout_). It is not possible to read from a _Writable_.
+
+## Events
+Node.js writable streams implement the [EventEmitter](https://github.com/lgeorgieff/javascript/blob/master/node.js/060_events/README.md) API and offer the following events:
+* _drain_
+* _finish_
+* _pipe_
+* _unpipe_
+* _error_
+
+An example script is available at [writable_events.js](writable_events.js).

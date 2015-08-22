@@ -65,3 +65,14 @@ Node.js writable streams implement the [EventEmitter](https://github.com/lgeorgi
 * _error_
 
 An example script is available at [writable_events.js](writable_events.js).
+
+## Writing into a Stream
+The _Writeable_ class provides several possibilities to write data into the abstracted source.
+
+The most common approach is to use the _writable.write(data [,encoding] [,callback])_ method.
+* It writes the passed data into the source
+* Returns a boolean value whether all data was written into the abstracted source (_true_) or whether it (or a part of it) was buffered in the stream's internal buffer (_false_).
+* The _callback_ argument passed to this method is called after the data was entirely written into the abstracted source.
+* If _data_ was not entirely wirtten into the abstracted source:
+ * the common approach is to use the passed _callback_ to wait until the buffered data is written into the source and write new data to the source afterwards by using the method _write_ again. This ensures that new data is not buffered in the stream, thus it makes it more memory efficient.
+ * another possibility is to use the _drain_ event. This event is fired if the method _write_ returned _false_ and when the last chunk of the buffered data was written into the source. Thus, _writable.once('drain', callback)_ can be used to write new data to the source after the buffered data was entirely written into the abstraced source.

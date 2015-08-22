@@ -76,3 +76,14 @@ The most common approach is to use the _writable.write(data [,encoding] [,callba
 * If _data_ was not entirely wirtten into the abstracted source:
  * the common approach is to use the passed _callback_ to wait until the buffered data is written into the source and write new data to the source afterwards by using the method _write_ again. This ensures that new data is not buffered in the stream, thus it makes it more memory efficient.
  * another possibility is to use the _drain_ event. This event is fired if the method _write_ returned _false_ and when the last chunk of the buffered data was written into the source. Thus, _writable.once('drain', callback)_ can be used to write new data to the source after the buffered data was entirely written into the abstraced source.
+
+
+You can also use the methods _writable.cork()_ and _writable.uncork()_ to buffer all the data which was passed by the method _writable.write()_.
+* _writable.cork()_ motivates the stream to buffer all the data passed to it.
+* _writable.uncork()_ motivates the stream to flush all the data passed to the stream since the _writable.cork()_ invocation.
+* _writable.end()_ also causes the passed data since the last call of _cork()_ to be flushed.
+
+
+When you are finished with writing to the stream you can use the method _writable.end([data] [,encoding] [callback])_ to close the stream.
+* Optionally you can pass data that is written to the abstracted source before the stream is closed.
+* If a callback is passed to this method, it is called when the _finish_ event of the stream is fired.

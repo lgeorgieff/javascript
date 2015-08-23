@@ -93,3 +93,6 @@ Duplex streams implement both the _Readable_ and the _Writable_ APIs, e.g. [TCP 
 
 # Transform Streams
 Transform streams implement both the _Readable_ and the _Writable_ APIs. The output is not equal to the input but it is computed from the input e.g. [crypto streams](https://nodejs.org/api/crypto.html).
+
+#Self-Implemented Streams
+The [Node.js documentation](https://nodejs.org/api/stream.html#stream_api_for_stream_implementors) also offers a description of how to implement your own streams.

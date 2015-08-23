@@ -87,3 +87,9 @@ You can also use the methods _writable.cork()_ and _writable.uncork()_ to buffer
 When you are finished with writing to the stream you can use the method _writable.end([data] [,encoding] [callback])_ to close the stream.
 * Optionally you can pass data that is written to the abstracted source before the stream is closed.
 * If a callback is passed to this method, it is called when the _finish_ event of the stream is fired.
+
+# Duplex Streams
+Duplex streams implement both the _Readable_ and the _Writable_ APIs, e.g. [TCP sockets](https://nodejs.org/api/net.html#net_class_net_socket).
+
+# Transform Streams
+Transform streams implement both the _Readable_ and the _Writable_ APIs. The output is not equal to the input but it is computed from the input e.g. [crypto streams](https://nodejs.org/api/crypto.html).

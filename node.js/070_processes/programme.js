@@ -83,6 +83,3 @@ if (abortUngracefully) {
     process.exitCode = 123;
     process.exit(); // process.exit(123) is also possible
 }
-
-
-

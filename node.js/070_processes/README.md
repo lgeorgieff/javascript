@@ -18,3 +18,10 @@ An example script is available at [streams.js](streams.js).
 _process.stdin_ is a  [Readable Stream](../110_streams/README.md#readable-streams) to stdin.
 
 An example script is available at [streams.js](streams.js).
+
+# Event Loop
+TODO
+
+# Basic Functionality
+The _process_ property provides basic funcitonality to control the current process.
+An example script is available at [programme.js](programme.js).

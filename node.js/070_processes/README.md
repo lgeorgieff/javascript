@@ -20,8 +20,11 @@ _process.stdin_ is a  [Readable Stream](../110_streams/README.md#readable-stream
 An example script is available at [streams.js](streams.js).
 
 # Event Loop
-TODO
+The _process_ property provides a function called _process.nextTick(fn)_. The passed function _fn_ is executed directly after the last turn of the event loop was executed.
+
+An example script is available at [event_loop.js](event_loop.js).
 
 # Basic Functionality
 The _process_ property provides basic funcitonality to control the current process.
+
 An example script is available at [programme.js](programme.js).

@@ -2,3 +2,4 @@ The event-loop in Node.js is a very interesting topic. There exist a lot of good
 * [Understanding the node.js event loop](http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/)
 * [Understanding the Node.js Event Loop](https://nodesource.com/blog/understanding-the-nodejs-event-loop)
 * [Node.js Event Loop](http://www.tutorialspoint.com/nodejs/nodejs_event_loop.htm)
+* [Node.js Event loop - Stack Overflow](http://stackoverflow.com/questions/25568613/node-js-event-loop)

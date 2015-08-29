@@ -58,7 +58,29 @@ You may use the switch _--jslint&#95;error_ to specify additional code style che
 
 If you want to enforce the checking of existing documentation ([JSDoc](../../jsdoc/README.md)), you may use the switch _--jsdoc_.
 
-## Checking Multiple Files
+### Checking Multiple Files
 _gjslint_ can be used to also check entire directories with files by specifying a path and using the command line switch _--recurse_, i.e. _gjslint --recurse ./test_. As default only JavaScript files are checked, i.e. files with a file extension set to _.js_. To take additional files into account you may use the switch _--additional&#95;extensions_, e.g. _gjslint --additional&#95;extensions JavaScript --recurse ./test_ will also check the file [/javascript/closure&#95;tools/closure&#95;linter/test/test.JavaScript](test/test.JavaScript). To check JavaScript code in HTML files you can use the switch _--check&#95;html_.
 
 If you want to exclude certain sub directories or files from being checked by the Closure Linter tool, you may use the command line switches _-e/_ respectively _--exclude&#95;directories_ or _-x_ resepectively _--exclude&#95;files_ and set the corresponding paths as a comma separated list on the switches, e.g. _gjslint --additional&#95;extensions JavaScript --recurse ./test --exclude&#95;directories sub1_ will ignore the directory [test/sub1](test/sub1).
+
+## fixjsstyle
+_fixjsstyle_ will check your JavaScript files for invalid code style and directly fix the errors in the corresponding files. The return code of _fixjsstyle_ is _0_ for files that are valid and for files that are invalid against the [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+
+The command line options are similar to the options that are available for _gjslint_. _fixjsstyle --help_ mentions the following additional option which is of interest _--[no]dry&#95;run_. It prevents _fixjsstyle_ from modifying the files directly but motivates the tool to print the output on _stdout_.
+
+An example run can be started by calling _fixjsstyle test.js_. The following modifications are made to the file [test.js](test.js):
+```diff
+--- a/closure_tools/closure_linter/test.js
++++ b/closure_tools/closure_linter/test.js
+@@ -19,8 +19,8 @@
+ 
+ /**
+ */
+-function my_fun () {
+-    return iDoesNotExist +2;
++function my_fun() {
++    return iDoesNotExist + 2;
+ }
+ 
+ my_fun();
+```

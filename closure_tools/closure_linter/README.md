@@ -1,4 +1,4 @@
-[Closure Linter](https://developers.google.com/closure/utilities/) is a python tool written by Google. It can be used to check the style of JavaScript code. It offers only little custimzation possibiities regarding the JavaScript code and focuses on the official [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+[Closure Linter](https://developers.google.com/closure/utilities/) is a python tool written by Google. It can be used to check the style of JavaScript code. It offers only little custimzation possibiities regarding the JavaScript code and focuses on the official [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
 # Installation
 1. Install [python 2.7.X](https://www.python.org/downloads/)
@@ -10,3 +10,50 @@
 Finally you can use the executables:
 * gjslint
 * fixjsstyle
+
+# Usage
+## gjslint
+_gjslint_ will check your JavaScript files for invalid code style and print error messages on the console/_stdout_. It does not fix them and it also does not report programming errors. For checking your code with respect to coding errors you have to use other tools, e.g. the [closure compiler](../closure_compiler/README.md).
+
+The basic approach is to check a single JavaScript file, e.g. _gjslint test.js_. This performs the stantdard checks for the file _test.js_. If the file is valid according to the [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml), a short message is printed on the screen and the exit code of _gjslint_ is _0_. In error case the errors including the erorr IDs are printed on the console (_stdout_) and the return value of _gjslint_ is _1_.
+
+With _gjslint --help_ you get the full list of options _gjslint_ offers. The following sections will describe only a few of them.
+
+### Disabling Checks
+In error case _gjslint_ outputs data like this:
+```
+Line 8, E:0110: Line too long (116 characters).
+Line 9, E:0110: Line too long (111 characters).
+Line 11, E:0110: Line too long (117 characters).
+Line 12, E:0110: Line too long (111 characters).
+Line 15, E:0110: Line too long (93 characters).
+Line 19, E:0001: Extra space after "my_fun"
+Line 20, E:0002: Missing space after "+"
+Found 7 errors, including 0 new errors, in 1 file (0 files OK).
+
+Some of the errors reported by GJsLint may be auto-fixable using the script
+fixjsstyle. Please double check any changes it makes and report any bugs. The
+script can be run by executing:
+
+fixjsstyle test.js
+```
+
+You can use the test script [test.js](test.js) for testing. It should produce exaclty the same output as shown before.
+
+For disabling specific errors you may use the switch _--disable_. It allows you to specify the errors that should be ignored, e.g. _gjslint --disable 0110 test.js_. If you want to specify several error types to be ignored you can use _gjslint --disable 0110,0001 test.js_. In this case the result will be the following one:
+```
+Line 20, E:0002: Missing space after "+"
+Found 1 error, including 0 new errors, in 1 file (0 files OK).
+
+Some of the errors reported by GJsLint may be auto-fixable using the script
+fixjsstyle. Please double check any changes it makes and report any bugs. The
+script can be run by executing:
+
+fixjsstyle --disable 0110,0001 test.js
+```
+
+The same result also can be achieved by specifying the line length and ignoring extra spaces (_0001_), i.e. _gjslint --max_line_length 120 --disable 0001 test.js_
+
+You may use the switch _--jslint&#95;error_ to specify additional code style checks or you may use the switch _--strict_ to enforce checking against the stricter closure style.
+
+If you want to enforce the checking of existing documentation ([JSDoc](../../jsdoc/README.md)), you may use the switch _--jsdoc_.

@@ -57,3 +57,8 @@ The same result also can be achieved by specifying the line length and ignoring 
 You may use the switch _--jslint&#95;error_ to specify additional code style checks or you may use the switch _--strict_ to enforce checking against the stricter closure style.
 
 If you want to enforce the checking of existing documentation ([JSDoc](../../jsdoc/README.md)), you may use the switch _--jsdoc_.
+
+## Checking Multiple Files
+_gjslint_ can be used to also check entire directories with files by specifying a path and using the command line switch _--recurse_, i.e. _gjslint --recurse ./test_. As default only JavaScript files are checked, i.e. files with a file extension set to _.js_. To take additional files into account you may use the switch _--additional&#95;extensions_, e.g. _gjslint --additional&#95;extensions JavaScript --recurse ./test_ will also check the file [/javascript/closure&#95;tools/closure&#95;linter/test/test.JavaScript](test/test.JavaScript). To check JavaScript code in HTML files you can use the switch _--check&#95;html_.
+
+If you want to exclude certain sub directories or files from being checked by the Closure Linter tool, you may use the command line switches _-e/_ respectively _--exclude&#95;directories_ or _-x_ resepectively _--exclude&#95;files_ and set the corresponding paths as a comma separated list on the switches, e.g. _gjslint --additional&#95;extensions JavaScript --recurse ./test --exclude&#95;directories sub1_ will ignore the directory [test/sub1](test/sub1).

@@ -18,3 +18,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
 ## Closure Compiler
 Google's closure compiler is a JavaScript to JavaScript compiler. It generates a much smaller code version of the input files. It can be used for performace improvement but also for error checking.
  1. [Closure compiler](closure_tools/closure_compiler/README.md)
+
+## Closure Linter
+The Closure Linter tool can be used to check the coding style against the [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+ 1. [Closure Linter](closure_tools/closure_linter/README.md)

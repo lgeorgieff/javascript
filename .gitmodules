@@ -4,3 +4,6 @@
 [submodule "closure_tools/closure_linter/closure-linter"]
 	path = closure_tools/closure_linter/closure-linter
 	url = https://github.com/google/closure-linter.git
+[submodule "jslint/JSLint"]
+	path = jslint/JSLint
+	url = https://github.com/douglascrockford/JSLint.git

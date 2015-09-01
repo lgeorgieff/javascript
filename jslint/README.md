@@ -6,4 +6,4 @@
 * Either copy the file [adsafe.js](https://github.com/douglascrockford/ADsafe/blob/master/adsafe.js) into the JSLint repository or create a simlink from the JSLint repository to the file [adsafe.js](https://github.com/douglascrockford/ADsafe/blob/master/adsafe.js) so that it can be accessed directly from [jsonlint.html](https://github.com/douglascrockford/JSLint/blob/master/jslint.html)
 * To test your installation open the file [jsonlint.html](https://github.com/douglascrockford/JSLint/blob/master/jslint.html) in your browser and test it (click on the button _JSLint_)
 
-You can also test analyze your code on the web page http://www.jslint.com/.
+You can also analyze your code on the web page http://www.jslint.com/.

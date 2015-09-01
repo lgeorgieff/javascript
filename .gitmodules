@@ -7,3 +7,6 @@
 [submodule "jslint/JSLint"]
 	path = jslint/JSLint
 	url = https://github.com/douglascrockford/JSLint.git
+[submodule "jslint/ADsafe"]
+	path = jslint/ADsafe
+	url = https://github.com/douglascrockford/ADsafe.git

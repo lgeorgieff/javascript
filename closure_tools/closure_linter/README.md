@@ -1,4 +1,4 @@
-[Closure Linter](https://developers.google.com/closure/utilities/) is a python tool written by Google. It can be used to check the style of JavaScript code. It offers only little custimzation possibiities regarding the JavaScript code and focuses on the official [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+[Closure Linter](https://developers.google.com/closure/utilities/) is a python tool written by Google. It can be used to check the style of JavaScript code. It offers only little custimization possibilities regarding the JavaScript code and focuses on the official [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
 # Installation
 1. Install [python 2.7.X](https://www.python.org/downloads/)

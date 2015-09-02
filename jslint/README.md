@@ -9,9 +9,9 @@
 
 You can also analyze your code on the web page http://www.jslint.com/.
 
-# Installation of the Node.js Version
-* There exist an [npm package](https://www.npmjs.com/package/jslint) for JSLint
-* Install the Node.js version of JSLint by calling
+# Installation of the [Node.js](https://nodejs.org/en/) Version
+* There exist an [npm package](https://www.npmjs.com/package/jslint) for [JSLint](http://www.jslint.com/)
+* Install the [Node.js](https://nodejs.org/en/) version of JSLint by calling
   * _npm install jslint_ to install it locally (you need to specify the path to the executable, i.e. _./node_modules/jslint/bin/jslint.js_)
   * _sudo npm install jslint -g_ to install it globally (you don't need the full path, _jslint_ is located in _$PATH_)
  
@@ -23,7 +23,7 @@ In the browser version you can enter the JavaScript code into the web page and s
 You may also specify some directives in the source code itself. At the top of the script you may put one of /&#42;global ...&#42;/, /&#42;jslint ...&#42;/ or /&#42;property ...&#42;/.
 
 ## /&#42;global ...&#42;/
-The _global_ directive can be used to define global variables or functions that are used in the currently checked script but are defined elsewhere. Without defining such global variables JSLint raises an error.
+The _global_ directive can be used to define global variables or functions that are used in the currently checked script but are defined elsewhere. Without defining such global variables [JSLint](http://www.jslint.com/) raises an error.
 
 The following example demonstrates the globals definition for [Node.js](https://nodejs.org/en/).
 ```javascript
@@ -57,7 +57,7 @@ The following example demonstrates how to set [Node.js](https://nodejs.org/en/) 
 ```
 
 ## /&#42;property ...&#42;/
-The _property_ directive allows the definition of properties used in the JavaScript files. If any property is used which is not defined in the _property_ directive an error is raised. If no _property_ directive is defined, the properties are not checked. In addition JSLint generates a _property_ output for each file.
+The _property_ directive allows the definition of properties used in the JavaScript files. If any property is used which is not defined in the _property_ directive an error is raised. If no _property_ directive is defined, the properties are not checked. In addition [JSLint](http://www.jslint.com/) generates a _property_ output for each file.
 
 The _property_ directive is mainly thought for checking the spelling of properties.
 
@@ -85,4 +85,57 @@ var writer = {
 writer.write('Hello World!');
 ```
 
-The documentation on directives and on general checking of JavaScript performed by JSLint is available [here](http://www.jslint.com/help.html).
+The documentation on directives and on general checking of JavaScript performed by [JSLint](http://www.jslint.com/) is available [here](http://www.jslint.com/help.html).
+
+## [Node.js](https://nodejs.org/en/) Version
+The [Node.js](https://nodejs.org/en/) version is working on the command line, e.g. by calling _jslint test.js_.
+
+In addition to the browser version you can specify the following command line options for _jslint_:
+* _--ass_
+* _--bitwise_
+* _--browser_
+* _--closure_
+* _--continue_
+* _--debug_
+* _--devel_
+* _--eqeq_
+* _--evil_
+* _--forin_
+* _--indent_
+* _--maxerr_
+* _--maxlen_
+* _--newcap_
+* _--node_
+* _--nomen_
+* _--passfail_
+* _--plusplus_
+* _--predef_
+* _--properties_
+* _--regexp_
+* _--rhino_
+* _--sloppy_
+* _--stupid_
+* _--sub_
+* _--todo_
+* _--unparam_
+* _--vars_
+* _--white_
+
+For a full description of all options call _man jslint_
+
+In addition you may create a configuration file at:
+* $HOME/.jslintrc
+* ./jslintrc
+* ./.jslintrc
+
+of the form:
+```javascript
+{
+    "vars": true,
+    "white": true,
+    "maxlen": 100,
+    "predef": "foo,bar,baz"
+}
+```
+
+The [Node.js](https://nodejs.org/en/) version of [JSLint](http://www.jslint.com/) is able to use several editions of [JSLint](http://www.jslint.com/). Each edition contains a different set of rules that are used to check the JavaScript code. This is due to the fact the the author of [JSLint](http://www.jslint.com/) updates the rules according to his experience and feedback. With the [Node.js](https://nodejs.org/en/) version you are abe to specify the edition by using the option _--edition_. The call _jslint --edition=latest test.js_ would use the latest edition of [JSLint](http://www.jslint.com/) rules. In this combination some rules defined by other options, e.g. _vars_ are ignored.

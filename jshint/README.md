@@ -40,3 +40,14 @@ A valid configuration file for [JSHint](http://jshint.com/) is a [JSON](http://j
 ```
 
 The default configuraiton used by [JSHint](http://jshint.com/) can be found at [GitHub](https://github.com/jshint/jshint/blob/master/examples/.jshintrc).
+
+## Linting Options
+This post will not go through all options available for [JSHint](http://jshint.com/) since multiple sources describe it already in a very detailed fashion, e.g. the [JSHint documentation](http://jshint.com/docs/options/) and also the default [configuration](https://github.com/jshint/jshint/blob/master/examples/.jshintrc).
+
+In general the options for [JSHint](http://jshint.com/) can be categorized in:
+* Linting options
+ * Enforcing options
+ * Relaxing options
+* Environment options
+* Globals definitions
+* Globals exports

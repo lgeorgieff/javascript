@@ -20,8 +20,5 @@ Google's closure compiler is a JavaScript to JavaScript compiler. It generates a
  1. [Closure compiler](closure_tools/closure_compiler/README.md)
 
 ## JavaScript Linting
-### [Closure Linter](closure_tools/closure_linter/README.md)
-The Closure Linter tool can be used to check the coding style and validity against the [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
-
-### [JSLint](jslint/README.md)
-The JSLint tool can be used to check the coding style against the ideas from Douglas Crockford mentioned in [JavaScript: The Good Parts](http://www.maritimejournal.com/__data/assets/pdf_file/0020/1033940/Javascript-The-Good-Parts.pdf).
+* [Closure Linter](closure_tools/closure_linter/README.md): The Closure Linter tool can be used to check the coding style and validity against the [Google JavaScript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+* [JSLint](jslint/README.md): The JSLint tool can be used to check the coding style against the ideas from Douglas Crockford mentioned in [JavaScript: The Good Parts](http://www.maritimejournal.com/__data/assets/pdf_file/0020/1033940/Javascript-The-Good-Parts.pdf).

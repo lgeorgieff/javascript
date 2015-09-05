@@ -33,7 +33,7 @@ Beside configuring [ESLint](http://eslint.org/) inline in JavaScript sources, th
 * _eslintConfig_ section in _package.json_
  * Create the _eslintConfig_ property in the file _package.json_ of your project.
 
-A valid configuration file for [ESLint](http://eslint.org/) is a either a [JSON](http://json.org/) or a [YAML](http://www.yaml.org/) file with properties that represent the linting options, e.g. the following [JSON](http://json.org/) example:
+A valid configuration file for [ESLint](http://eslint.org/) is either a [JSON](http://json.org/) or a [YAML](http://www.yaml.org/) file with properties that represent the linting options, e.g. the following [JSON](http://json.org/) example:
 
 ```javascript
 {
@@ -69,3 +69,14 @@ extends: 'eslint:recommended'
 ```
 
 You can run [ESLint](http://eslint.org/) with the command line option _--init_. This will ask you for some JavaScript coding style preferences and based on your answers [ESLint](http://eslint.org/) will create a configuration file called _.eslintrc_ in the working directory.
+
+The different configuration options are processed in the followong order:
+* Inline configuration (including _/*eslint-env ... */_, _/*global ... */_, _/*eslint ... */_, _/*eslint-disable&#42;/_, _/*eslint-enable&#42;/_)
+* Command line options (including _--global_, _--rule_, _--env_, _--config_)
+* Project level configuration (is searched in the file system until the file system root is reached)
+ * _package.json_ file in project folder
+ * _.eslintrc_ file in project folder
+* _~/.eslintrc_ (if no other configuration file is found)
+
+# Extending Configuration Files
+In the configuration file it is possible to use the property _extends_ which allows to inherit [ESLint](http://eslint.org/) settings from one or multiple base configuration files.

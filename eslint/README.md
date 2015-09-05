@@ -23,7 +23,6 @@ More information on the installation of [ESLint](http://eslint.org/) is availabl
  * Used for emabling linting for the section of the checked file that starts after this directive.
 
 # Configuration
-
 Beside configuring [ESLint](http://eslint.org/) inline in JavaScript sources, there is a better, a cleaner way to configure how [ESLint](http://eslint.org/) checks your source files, namely by using configuration files. You may choose one of the following options:
 * _--config &lt;path to config file&gt;_
  * Specify the command line option _--config_ and set a path to a configuration file.

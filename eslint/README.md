@@ -78,7 +78,7 @@ The different configuration options are processed in the followong order:
  * _.eslintrc_ file in project folder
 * _~/.eslintrc_ (if no other configuration file is found)
 
-# Extending Configuration Files
+## Extending Configuration Files
 In the configuration file it is possible to use the property _extends_ which allows to inherit [ESLint](http://eslint.org/) settings from one or multiple base configuration files.
 
 # Linting Options

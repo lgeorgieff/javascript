@@ -24,3 +24,4 @@ Google's closure compiler is a JavaScript to JavaScript compiler. It generates a
 2. [JSLint](jslint/README.md): The JSLint tool can be used to check the coding style against the ideas from Douglas Crockford mentioned in [JavaScript: The Good Parts](http://www.maritimejournal.com/__data/assets/pdf_file/0020/1033940/Javascript-The-Good-Parts.pdf).
 3. [JSHint](jshint/README.md): The JSHint tool can be used to check the coding style against configurable JavaScript rules.
 4. [ESLint](eslint/README.md): The ESLint tool can be used to check the coding style against configurable JavaScript rules focusing on coding errors (not on pure syntax style).
+5. [JSCS](jscs/README.md): The JSCS tool can be used to check the coding style against configurable JavaScript rules supporting syntax styles only (semantics are not checked at all).

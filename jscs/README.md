@@ -17,3 +17,34 @@ In addition to the core functionality of [JSCS](http://jscs.info/) a very popula
 The allowed inline directives are thought for disabling and enabling linting for particular sections of the source code:
 * _/&#42;jscs: disable&#42;/_ or _// jscs: disable_
 * _/&#42;jscs: enable&#42;/_ or _// jscs: enable_
+
+# Configuration
+You may choose one of the following options to configure [JSCS](http://jscs.info/):
+* _--config &lt;path to config file&gt;_
+ * Specify the command line option _--config_ and set a path to a configuration file.
+* _.jscsrc_
+ * Create a file called _.jscsrc_ in your project folder.
+ * If no such file is found in the project folder, [JSCS](http://jscs.info/) will go up the file system tree until it finds such a file.
+
+## Presets
+The following presets can be used as full rule set or as a base configuration that can be modified:
+* [Airbnb](https://github.com/airbnb/javascript)
+* [Crockford](http://javascript.crockford.com/code.html)
+* [Google](https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+* [Grunt](http://gruntjs.com/contributing#syntax)
+* [jQuery](https://contribute.jquery.org/style-guide/js/)
+* [MDCS](https://github.com/mrdoob/three.js/wiki/Mr.doob's-Code-Style™)
+* [node-style-guide](https://github.com/felixge/node-style-guide)
+* [Wikimedia](https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript)
+* [WordPress](https://make.wordpress.org/core/handbook/coding-standards/javascript/)
+* [Yandex](https://github.com/yandex/codestyle/blob/master/javascript.md)
+
+The particular rule sets of the presets can be checked out at [GitHub](https://github.com/jscs-dev/node-jscs/tree/master/presets).
+
+One important thing on presets is how to disable some rules which only support one value, such as: [disallowSpacesInCallExpression](http://jscs.info/rule/disallowSpacesInCallExpression). If this rule is defined it must be set true only. So how to disable this value if it is set in a chosen preset? You have to set it to null, e.g.
+```javascript
+{
+    "preset": "google",
+    "disallowSpacesInCallExpression": null
+}
+```

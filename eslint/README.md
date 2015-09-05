@@ -33,7 +33,7 @@ Beside configuring [ESLint](http://eslint.org/) inline in JavaScript sources, th
 * _eslintConfig_ section in _package.json_
  * Create the _eslintConfig_ property in the file _package.json_ of your project.
 
-A valid configuration file for [ESLint](http://eslint.org/) is a either a [JSON](http://json.org/) or a [YAML](http://www.yaml.org/) file with properties that represent the linting options, e.g.
+A valid configuration file for [ESLint](http://eslint.org/) is a either a [JSON](http://json.org/) or a [YAML](http://www.yaml.org/) file with properties that represent the linting options, e.g. the following [JSON](http://json.org/) example:
 
 ```javascript
 {
@@ -48,6 +48,7 @@ A valid configuration file for [ESLint](http://eslint.org/) is a either a [JSON]
 }
 ```
 
+or the following [YAML](http://www.yaml.org/) example:
 ```yaml
 rules:
   indent:

@@ -26,7 +26,7 @@ Beside configuring [JSHint](http://jshint.com/) inline in JavaScript sources, th
 1. _--config &lt;path to config file&gt;_
  * Specify the command line option _--config_ and set a path to a configuration file.
 2. _.jshintrc_
- * Create a file called _.jshintrc_ in you project folder.
+ * Create a file called _.jshintrc_ in your project folder.
  * If no such file is found in the project folder, [JSHint](http://jshint.com/) will go up the file system tree until it finds such a file.
 3. _jshintConfig_ section in _package.json_
  * Create the _jshintConfig_ property in the file _package.json_ of your project.

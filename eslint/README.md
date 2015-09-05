@@ -1,4 +1,4 @@
-[ESLint](http://eslint.org/) is a tool written in JavaScript for static code analysis of JavaScript files. You can download it at [GitHub](https://github.com/eslint/eslint). It offers many configuration possibilities (in contrast to [JSLint](../jslint/README.md) and [JSHint](../jshint/README.md)). In addition it is plugin-based, i.e. each (linting) rule is a plugin and new rules can be added by implementing and adding plugins to [ESLint](http://eslint.org/).
+[ESLint](http://eslint.org/) is a tool written in JavaScript for static code analysis of JavaScript files. You can download it at [GitHub](https://github.com/eslint/eslint). It offers many configuration possibilities (in contrast to [Closure Linter](../closure_tools/closure_linter/README.md), [JSLint](../jslint/README.md) and [JSHint](../jshint/README.md)). In addition it is plugin-based, i.e. each (linting) rule is a plugin and new rules can be added by implementing and adding plugins to [ESLint](http://eslint.org/).
 
 # Installation
 * The easiest way to install [ESLint](http://eslint.org/) is via [npm](https://github.com/npm/npm).
@@ -80,3 +80,17 @@ The different configuration options are processed in the followong order:
 
 # Extending Configuration Files
 In the configuration file it is possible to use the property _extends_ which allows to inherit [ESLint](http://eslint.org/) settings from one or multiple base configuration files.
+
+# Linting Options
+This post will not go through all options available for [ESLint](http://eslint.org/) since the [ESLint documentation](http://eslint.org/docs/rules/) describes it already in a very detailed fashion.
+
+In general the options for [ESLint](http://eslint.org/) can be categorized in:
+* [Possible Errors](http://eslint.org/docs/rules/#possible-errors)
+* [Best Practices](http://eslint.org/docs/rules/#best-practices)
+* [Strict Mode](http://eslint.org/docs/rules/#strict-mode)
+* [Variables](http://eslint.org/docs/rules/#variables)
+* [Node.js and CommonJS](http://eslint.org/docs/rules/#nodejs-and-commonjs)
+* [Stylistic Issues](http://eslint.org/docs/rules/#stylistic-issues)
+* [ECMAScript 6](http://eslint.org/docs/rules/#ecmascript-6)
+
+In contrast to the other linting tools ([Closure Linter](../closure_tools/closure_linter/README.md), [JSLint](../jslint/README.md), [JSHint](../jshint/README.md)), [ESLint](http://eslint.org/) offers only a few linting options for pure coding style, e.g. where to put white spaces or brackets etc. For linting pure coding style the authors of [ESLint](http://eslint.org/) recommend to use [JSCS](../jscs/README.md).

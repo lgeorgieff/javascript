@@ -91,5 +91,3 @@ In general the options for [ESLint](http://eslint.org/) can be categorized in:
 * [Node.js and CommonJS](http://eslint.org/docs/rules/#nodejs-and-commonjs)
 * [Stylistic Issues](http://eslint.org/docs/rules/#stylistic-issues)
 * [ECMAScript 6](http://eslint.org/docs/rules/#ecmascript-6)
-
-In contrast to the other linting tools ([Closure Linter](../closure_tools/closure_linter/README.md), [JSLint](../jslint/README.md), [JSHint](../jshint/README.md)), [ESLint](http://eslint.org/) offers only a few linting options for pure coding style, e.g. where to put white spaces or brackets etc. For linting pure coding style the authors of [ESLint](http://eslint.org/) recommend to use [JSCS](../jscs/README.md).

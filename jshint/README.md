@@ -51,3 +51,5 @@ In general the options for [JSHint](http://jshint.com/) can be categorized in:
 * Environment options
 * Globals definitions
 * Globals exports
+
+In contrast to the other linting tools ([Closure Linter](../closure_tools/closure_linter/README.md), [JSHint](../jshint/README.md), [ESLint](http://eslint.org/)), [JSHint](http://jshint.com/) offers only a few linting options for pure coding style, e.g. where to put white spaces or brackets etc. For linting pure coding style the authors of [JSHint](http://jshint.com/) recommend to use [JSCS](../jscs/README.md).

@@ -3,7 +3,7 @@
 # Installation
  * The easiest way to install [JSDoc](https://github.com/jsdoc3/jsdoc) is via npm.
   * _npm install jsdoc_
-    * Local installation, i.e. you have to invoke the executable by a full path: _./node&#95;modules/jsdoc/bin/jsdoc_.
+    * Local installation, i.e. you have to invoke the executable by a full path: _./node&#95;modules/jsdoc/jsdoc.js_.
   * _sudo npm install -g jsdoc_
     * Global installation, i.e. you can invoke the executable by calling: _jsdoc_.
 

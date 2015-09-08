@@ -3,7 +3,7 @@
 # Installation
 * The easiest way to install [ESLint](http://eslint.org/) is via [npm](https://github.com/npm/npm).
   * _npm install eslint_
-    * Local installation, i.e. you have to invoke the executable by a full path: _./node_modules/eslint/bin/eslint.js_.
+    * Local installation, i.e. you have to invoke the executable by a full path: _./node&#95;modules/eslint/bin/eslint.js_.
   * _sudo npm install -g eslint_
     * Global installation, i.e. you can invoke the executable by calling: _eslint_.
 

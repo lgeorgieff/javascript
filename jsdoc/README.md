@@ -9,5 +9,14 @@
 
 More information on the installation of [JSDoc](https://github.com/jsdoc3/jsdoc) is available [here](https://github.com/jsdoc3/jsdoc#installation-and-usage).
 
+# Usage
+TODO
 
+# Configuration
+TODO
+
+# Best Practices
+TODO
+
+# Tags Offered by the Closure Complier
 TODO: Go through all supported contructs of the closure compiler: https://developers.google.com/closure/compiler/docs/js-for-compiler

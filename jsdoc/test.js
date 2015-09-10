@@ -1,5 +1,5 @@
 /**
- * @fileOverview This file defines and runs some unit tests for the module {@link Name}.
+ * @module Test
  * @author Lukas Georgieff <lukas.georgieff@hotmail.com>
  * @version 1.0.0
  * @license LGPL-3.0
@@ -8,7 +8,7 @@
 var name = require('./name');
 var assert = require('assert');
 
-var maxName = new name.Name('Max', 'Mustermann');
+var maxName = new name.ComplexName('Max', 'Mustermann');
 assert(maxName);
 assert.strictEqual(maxName.hasLastName(), true);
 assert.strictEqual(maxName.getFirstNameCount(), 1);
@@ -18,7 +18,6 @@ assert.strictEqual(maxName.hasFirstNames(1), false);
 assert.strictEqual(maxName.getFullName(), 'Max Mustermann');
 assert.deepEqual(maxName.getFirstNames(), ['Max']);
 assert.strictEqual(maxName.getLastName(), 'Mustermann');
-
 
 var maxSimpleName = new name.SimpleName('Max', 'Mustermann');
 assert(maxSimpleName);
@@ -32,7 +31,7 @@ assert.deepEqual(maxSimpleName.getFirstNames(), ['Max']);
 assert.strictEqual(maxSimpleName.getLastName(), 'Mustermann');
 assert.deepEqual(maxSimpleName.getFirstName(), 'Max');
 
-var xyzName = new name.Name('  X   Y ', '  Z');
+var xyzName = new name.ComplexName('  X   Y ', '  Z');
 assert(xyzName);
 assert.strictEqual(xyzName.hasLastName(), true);
 assert.strictEqual(xyzName.getFirstNameCount(), 2);
@@ -44,7 +43,7 @@ assert.strictEqual(xyzName.getFullName(), 'X Y Z');
 assert.deepEqual(xyzName.getFirstNames(), ['X', 'Y']);
 assert.strictEqual(xyzName.getLastName(), 'Z');
 
-var abcName = new name.Name('A   ', ' B C ');
+var abcName = new name.ComplexName('A   ', ' B C ');
 assert(abcName);
 assert.strictEqual(abcName.hasLastName(), true);
 assert.strictEqual(abcName.getFirstNameCount(), 1);
@@ -55,7 +54,7 @@ assert.strictEqual(abcName.getFullName(), 'A B C');
 assert.deepEqual(abcName.getFirstNames(), ['A']);
 assert.strictEqual(abcName.getLastName(), 'B C');
 
-var aName = new name.Name('A', '');
+var aName = new name.ComplexName('A', '');
 assert(aName);
 assert.strictEqual(aName.hasLastName(), false);
 assert.strictEqual(aName.getFirstNameCount(), 1);
@@ -66,7 +65,7 @@ assert.strictEqual(aName.getFullName(), 'A');
 assert.deepEqual(aName.getFirstNames(), ['A']);
 assert.strictEqual(aName.getLastName(), '');
 
-var bName = new name.Name('', 'B');
+var bName = new name.ComplexName('', 'B');
 assert(bName);
 assert.strictEqual(bName.hasLastName(), true);
 assert.strictEqual(bName.getFirstNameCount(), 0);

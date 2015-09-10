@@ -1,8 +1,5 @@
 /**
  * @module Name
- * @fileOverview This file illustrates how to use JSDoc to generate documentation resources for JavaScript source
- *               files. <br/>
- *               In particular this file defines some logic and exports it as Node.js module.
  * @author Lukas Georgieff <lukas.georgieff@hotmail.com>
  * @version 1.0.1
  * @license LGPL-3.0
@@ -190,6 +187,5 @@ SimpleName.prototype.getFirstName = function () {
 
 util.inherits(SimpleName, ComplexName);
 
-
-module.exports.Name = ComplexName;
+module.exports.ComplexName = ComplexName;
 module.exports.SimpleName = SimpleName;

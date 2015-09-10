@@ -8,23 +8,24 @@
  * @license LGPL-3.0
  */
 
-
 /**
- * @todo Create some logic
- * @todo Expose a Node.js module
- * @todo Create a second Node.js module that references this module
- * @todo Create a entry script that uses this module and the second module
- * @todo Create some getters
- * @todo Create some setters
+ * The Node.js 'util' module that is used internally by this module.
+ *
+ * @private
  */
-
-
 var util = require('util');
 
 /**
+ * The constructor function for instances of the type <tt>ComplexName</tt>.
  *
+ * @public
+ * @constructor
+ *
+ * @param {string} firstnames A string that represents the first name of a full name. If the first name contains
+ *        multiple character sequences separated by blanks, they are treated as multiple first names.
+ * @param {string} lastname A string that represents the lastname of a full name.
  */
-function Name(firstnames, lastname) {
+function ComplexName(firstnames, lastname) {
     var self = this;
     this._firstnames = [];
     if (typeof firstnames === 'string') {
@@ -38,24 +39,37 @@ function Name(firstnames, lastname) {
 }
 
 /**
+ * A getter that indicates whether the <tt>ComplexName</tt> object has a last name or not.
  *
+ * @public
+ *
+ * @return {boolean} <tt>true</tt> if at least one last name exists. <tt>false</tt> otherwise.
  */
-Name.prototype.hasLastName = function () {
+ComplexName.prototype.hasLastName = function () {
     return this._lastname.length !== 0;
 }
 
 /**
+ * A getter that indicates whether the <tt>ComplexName</tt> object has a first name or not.
  *
+ * @public
+ *
+ * @return {boolean} <tt>true</tt> if at least one first name exists. <tt>false</tt> otherwise.
  */
-Name.prototype.hasFirstNames = function (order) {
+ComplexName.prototype.hasFirstNames = function (order) {
     return (order === undefined && this.getFirstNameCount() !== 0) ||
         (!isNaN(order) && this._firstnames[order] !== undefined) 
 }
 
 /**
+ * A getter for the full name of a <tt>ComplexName</tt> object.
  *
+ * @public
+ *
+ * @return {string} The full name represented as a string. It includes all first names and the last name. Each of them
+ *         is separated by a blank character.
  */
-Name.prototype.getFullName = function () {
+ComplexName.prototype.getFullName = function () {
     var result = '';
     for(var i = 0; i !== this._firstnames.length; ++i) {
         if (i === 0) result = this._firstnames[i];
@@ -68,9 +82,14 @@ Name.prototype.getFullName = function () {
 }
 
 /**
+ * A getter for the first name of a <tt>ComplexName</tt> object.
  *
+ * @public
+ *
+ * @return {string} The first name of the full name object. If no first name is set, an empty string is returned. If
+ *         multiple first names are present, one string is returned with blanks as separators between each first name.
  */
-Name.prototype.getFirstName = function (order) {
+ComplexName.prototype.getFirstName = function (order) {
     if (order === undefined || order === null) {
         var result;
         for (var i = 0; i !== this._firstnames.length; ++i) {
@@ -84,7 +103,14 @@ Name.prototype.getFirstName = function (order) {
 }
 
 /**
+ * Creates and returns a shallow copy of the passed array.
  *
+ * @private
+ *
+ * @returns {Array<T>} A shallow copy of <tt>arr</tt>.
+ *
+ * @param {Array<T>} The array of which a shallow copy will be returned. If it is null, undefined or not an array the
+ *        return value is an empty array.
  */
 function cloneArray (arr) {
     if (arr === null || arr === undefined) return [];
@@ -92,52 +118,78 @@ function cloneArray (arr) {
 }
 
 /**
+ * A getter for the first names of a <tt>ComplexName</tt> object.
  *
+ * @public
+ *
+ * @return {Array<string>} An array of strings. Each string represents a first name of a full name.
  */
-Name.prototype.getFirstNames = function () {
+ComplexName.prototype.getFirstNames = function () {
     return cloneArray(this._firstnames);
 }
 
 /**
+ * A getter for the count of all first names of a <tt>ComplexName</tt> object.
  *
+ * @public
+ *
+ * @return {number} A positive integer.
  */
-Name.prototype.getFirstNameCount = function () {
+ComplexName.prototype.getFirstNameCount = function () {
     return this._firstnames.length;
 }
 
 /**
+ * A getter for the last name of a <tt>ComplexName</tt> object.
  *
+ * @public
+ *
+ * @return {string} The last name of the full name object. If no first name is set, an empty string is returned.
  */
-Name.prototype.getLastName = function () {
+ComplexName.prototype.getLastName = function () {
     return this._lastname;
 }
 
 /**
+ * The maximum amount of first names that is supported for instanes of the type SimpleName.
  *
+ * @const
+ * @type {number}
+ * @default 1
  */
 var SIMPLE_NAME_FIRST_NAMES_MAX = 1;
 
 /**
+ * The constructor function for instances of the type SimpleName.
  *
+ * @public
+ * @constructor
+ * @extends ComplexName
+ *
+ * @param {string} firstnames A string that represents the first name of a full name. It must not contain blanks that
+ *                 separate non-blank sequences.
+ * @param {string} lastname A string that represents the lastname of a full name.
  */
 function SimpleName (firstname, lastname) {
-    Name.call(this, firstname, lastname);
+    ComplexName.call(this, firstname, lastname);
     if (this.getFirstNameCount() > SIMPLE_NAME_FIRST_NAMES_MAX)
         throw new Error('A SimpleName may only have one first name but has: ' + this.getFirstNameCount());
 }
 
+/**
+ * A getter for the first name of a <tt>SimpleName</tt> object.
+ *
+ * @public
+ *
+ * @return {string} The first name of the full name object. If no first name is set, an empty string is returned.
+ */
 SimpleName.prototype.getFirstName = function () {
     if (this._firstnames.length === 0) return '';
     else return this._firstnames[0];
 }
 
-util.inherits(SimpleName, Name);
+util.inherits(SimpleName, ComplexName);
 
-/**
- *
- */
-module.exports.Name = Name;
-/**
- *
- */
+
+module.exports.Name = ComplexName;
 module.exports.SimpleName = SimpleName;

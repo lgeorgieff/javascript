@@ -77,9 +77,3 @@ assert.deepEqual(bName.getFirstNames(), []);
 assert.strictEqual(bName.getLastName(), 'B');
 
 assert.throws(function () { var xyzSimpleName = new name.SimpleName('  X   Y ', '  Z'); }, Error);
-
-
-
-
-
-

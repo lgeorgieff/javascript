@@ -1,5 +1,5 @@
 /**
- * @module Name
+ * @module name
  * @author Lukas Georgieff <lukas.georgieff@hotmail.com>
  * @version 1.0.1
  * @license LGPL-3.0

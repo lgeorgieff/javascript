@@ -148,7 +148,10 @@ ComplexName.prototype.getLastName = function () {
 }
 
 /**
- * The maximum amount of first names that is supported for instanes of the type SimpleName.
+ * The maximum amount of first names that is supported for instances of the type SimpleName.
+ *
+ * @public
+ * @exports name/SIMPLE_NAME_FIRST_NAMES_MAX
  *
  * @const
  * @type {number}
@@ -189,3 +192,4 @@ util.inherits(SimpleName, ComplexName);
 
 module.exports.ComplexName = ComplexName;
 module.exports.SimpleName = SimpleName;
+module.exports.SIMPLE_NAME_FIRST_NAMES_MAX = SIMPLE_NAME_FIRST_NAMES_MAX;

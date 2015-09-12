@@ -15,6 +15,9 @@ TODO
 # Configuration
 TODO
 
+# Templates
+TDOO
+
 # Best Practices
 TODO
 

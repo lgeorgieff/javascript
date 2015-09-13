@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @module name
  * @author Lukas Georgieff <lukas.georgieff@hotmail.com>

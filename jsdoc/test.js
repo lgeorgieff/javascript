@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @author Lukas Georgieff <lukas.georgieff@hotmail.com>
  * @version 1.0.1
@@ -10,6 +12,12 @@
  * @private
  */
 var name = require('./name');
+/**
+ * Requires the person module to perform several unit tests.
+ *
+ * @private
+ */
+var person = require('./person');
 /**
  * Requires the assert module to implement unit tests by using assertions.
  *
@@ -100,8 +108,27 @@ function test7 () {
     assert.throws(function () { var xyzSimpleName = new name.SimpleName('  X   Y ', '  Z'); }, Error);
 }
 
+function test8 () {
+    var dateOfBirth = new Date(1981, 2, 5);
+    var max = person('Max Klaus', 'Mustermann', dateOfBirth);
+    assert(max);
+    assert.strictEqual(max.name.hasLastName(), true);
+    assert.strictEqual(max.name.getFirstNameCount(), 2);
+    assert.strictEqual(max.name.hasFirstNames(), true);
+    assert.strictEqual(max.name.hasFirstNames(0), true);
+    assert.strictEqual(max.name.hasFirstNames(1), true);
+    assert.strictEqual(max.name.hasFirstNames(2), false);
+    assert.strictEqual(max.name.getFullName(), 'Max Klaus Mustermann');
+    assert.deepEqual(max.name.getFirstNames(), ['Max', 'Klaus']);
+    assert.strictEqual(max.name.getLastName(), 'Mustermann');
+    assert.deepEqual(max.dateOfBirth, dateOfBirth);
+    assert.strictEqual(max.getAge(), Math.floor((new Date() - dateOfBirth) / 1000 / 60 / 60 / 24 / 365));
+    assert.throws(function () { max.name = '...'; }, Error);
+    assert.throws(function () { max.dateOfBirth = '...'; }, Error);
+}
+
 /**
- * Performs all defined unit tests for the name module.
+ * Performs all defined unit tests for the name and person module.
  *
  * @public
  * @name test/testMain
@@ -128,6 +155,9 @@ function testMain () {
 
     test7();
     console.log('test7 passed');
+
+    test8();
+    console.log('test8 passed');
 }
 
 testMain();

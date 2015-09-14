@@ -12,6 +12,9 @@ More information on the installation of [JSDoc](https://github.com/jsdoc3/jsdoc)
 # Usage
 TODO
 
+## Command Line Options
+TODO
+
 # Configuration
 TODO
 

@@ -123,6 +123,9 @@ function test8 () {
     assert.strictEqual(max.name.getLastName(), 'Mustermann');
     assert.deepEqual(max.dateOfBirth, dateOfBirth);
     assert.strictEqual(max.getAge(), Math.floor((new Date() - dateOfBirth) / 1000 / 60 / 60 / 24 / 365));
+    var today = new Date();
+    if (today.getMonth() !== 2 || today.getDate() !== 5) assert(!max.hasBirthday());
+    else assert(max.hasBirthday());
     assert.throws(function () { max.name = '...'; }, Error);
     assert.throws(function () { max.dateOfBirth = '...'; }, Error);
 }

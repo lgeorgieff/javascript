@@ -29,26 +29,27 @@ var name = require('./name');
  */
 function createPerson (firstname, lastname, dateOfBirth) {
     /**
-     * @name Person
-     * @type Object
+     * @typedef {Object} Person
      * @property {ComplexName} name The name of the created person.
      * @property {Date} dateOfBirth The date of birth of the created person.
-     * @todo make getAge member of Person
+     * @property {function(): number} getAge A getter for the age of a person in full years.
+     * @property {function(birthdayAction): void} doIfBirthday A method that performs the passed callback if it is the
+     *           birthday of the person instance today.
+     * @property {function(): boolean} hasBirthday A getter to test the birthday of the person.
      */
     var person = {
-        /**
-         * Calculates the age of a person in full years depending on the current date.
-         *
-         * @todo make ComplexName (type) of Person.name a link to the class description of name.ComplexName
-         *
-         * @public
-         * @function getAge
-         *
-         * @return {number} The age of a person in full years
-         */
         getAge: function () {
             var diff = new Date() - this.dateOfBirth;
             return Math.floor( diff / 1000 / 60 / 60 / 24 / 365);
+        },
+        doIfHasBirthday: function (cb) {
+            if (typeof cb !== 'function') throw new Error('');
+            if(this.hasBirthday()) cb(this.getAge());
+        },
+        hasBirthday: function () {
+            var today = new Date();
+            return today.getMonth() === this.dateOfBirth.getMonth() &&
+                today.getDate() === this.dateOfBirth.getDate();
         }
     };
 
@@ -58,8 +59,12 @@ function createPerson (firstname, lastname, dateOfBirth) {
     Object.defineProperty(person, 'dateOfBirth', {writable: false,
                                                   configurable: false,
                                                   value: new Date(dateOfBirth)});
-
     return person;
 }
 
 module.exports = exports = createPerson;
+
+/**
+ * @callback birthdayAction
+ * @param {number} age The age in full years.
+ */

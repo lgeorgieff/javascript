@@ -50,12 +50,9 @@ In addition Google's [Closure Compiler](../closure_tools/closure_compiler/README
  *       is a valid array or not. This argument is optional. The default value is <tt>false</tt>.
  */
 function cloneArray (arr, throwErrorIfInvalid) {
-  if (throwErrorIfInvalid && !(arr instanceof Array))
-    throw new Error('invalid array');
-  else if (!(arr instanceof Array))
-    return [];
-  else
-    return arr.slice(0);
+  if (throwErrorIfInvalid && !(arr instanceof Array)) throw new Error('invalid array');
+  else if (!(arr instanceof Array)) return [];
+  else return arr.slice(0);
 }
 ```
 The illustrated [JSDoc](https://github.com/jsdoc3/jsdoc) comment generates a page with a description for a global method _cloneArray_ which takes an array of the type _T_ as first parameter and an optional parameter that is a _boolean_. It may throw an exception of the type _Error_. It returns an array of the type _T_. The accessibility of _cloneArray_ is _public_.

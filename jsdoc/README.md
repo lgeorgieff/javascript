@@ -58,6 +58,97 @@ function cloneArray (arr, throwErrorIfInvalid) {
 The illustrated [JSDoc](https://github.com/jsdoc3/jsdoc) comment generates a page with a description for a global method _cloneArray_ which takes an array of the type _T_ as first parameter and an optional parameter that is a _boolean_. It may throw an exception of the type _Error_. It returns an array of the type _T_. The accessibility of _cloneArray_ is _public_.
 
 ### Types
+Define a numerical value:
+```javascript
+/**
+ * A number value.
+ *
+ * @type {number}
+ */
+var aNumber = 6;
+
+/**
+ * A non-nullable number value.
+ *
+ * @type {!number}
+ */
+var anotherNumber = 6;
+```
+
+Define string values which are nullable:
+```javascript
+/**
+ * A string valur or null.
+ *
+ * @type {string|null}
+ */
+var stringOrNull = null;
+
+/**
+ * A string valur or null.
+ *
+ * @type {?string}
+ */
+var anotherStringOrNull = 'abc';
+```
+
+Define a numerical constant:
+```javascript
+/**
+ * A constant value indicating 0.
+ *
+ * @const
+ * @default 0
+ */
+var ZERO = 0;
+```
+
+Define an array of numbers:
+```javascript
+/**
+ * An array contianing odd numbers.
+ *
+ * @type {Array<number>}
+ */
+var oddNumbers = [0, 2, 4, 6, 8]
+```
+
+Define a function with a variable number of numeric arguments:
+```javascript
+/**
+ * Sums all numbers that are passed to this function.
+ *
+ * @return {number} The sum of all arguments
+ *
+ * @param {...number} numbers Numbers to be summed up.
+ */
+function sum (numbers) {
+    var result = 0;
+    for(var i = 0; i !== arguments.length; ++i)
+        result += arguments[i];
+    return result;
+}
+```
+
+Define a function with an optional argument:
+```javascript
+/**
+ * Prints the passed data to the object <tt>out</tt> refers to.
+ *
+ * @param {*=} data An optional argument that is printed. The default value is <tt>''</tt>.
+ */
+function print (data) {
+    if (data !== null && data !== undefined) console.log(data)
+    else printer.log('');
+}
+```
+
+
+
+
+
+
+
 TODO
 
 ### Callbacks

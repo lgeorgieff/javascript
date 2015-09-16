@@ -70,7 +70,21 @@ TODO
 TODO
 
 ### Files
-TODO
+```javascript
+/**
+ * @file This is a test file for illustrating JSDoc comments.
+ * @author Lukas Georgieff <lukas.georgieff@hotmail.com>
+ * @copyright Lukas Georgieff
+ * @license LGPL-3.0
+ * 
+ * @todo Add some functionality to this module.
+ *
+ * @requires module:some/library
+ */
+```
+
+The illustrated [JSDoc](https://github.com/jsdoc3/jsdoc) comment generates a page including a description for a file with a general description, the author (including his email address), a copy right statement, a license reference, a TODO and a reference to a required module.
+
 
 ## Command Line Options
 TODO

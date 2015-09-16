@@ -50,9 +50,9 @@ In addition Google's [Closure Compiler](../closure_tools/closure_compiler/README
  *       is a valid array or not. This argument is optional. The default value is <tt>false</tt>.
  */
 function cloneArray (arr, throwErrorIfInvalid) {
-  if (throwErrorIfInvalid && (arr === null || arr === undefined || !arr instanceof Array))
+  if (throwErrorIfInvalid && !(arr instanceof Array))
     throw new Error('invalid array');
-  else if (arr === null || arr === undefined || !arr instanceof Array)
+  else if (!(arr instanceof Array))
     return [];
   else
     return arr.slice(0);

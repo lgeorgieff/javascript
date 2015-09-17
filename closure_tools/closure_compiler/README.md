@@ -58,7 +58,7 @@ In addition to the optionc _--warning_level_ you can also use the options
 * _--jscomp&#95;off_
  * Suppresses all warnings of the specified group
 
-You find all warning groups at the [closure compiler github page](https://github.com/google/closure-compiler/wiki/Warningstrlt).
+You find all warning groups respectively error groups at the [closure compiler github page](https://github.com/google/closure-compiler/wiki/Warnings).
 
 To suppress particular errors you can use a whitelist file. The errors specifed in this whitelist will turn errors into warnings. An example is available at [warnings_whitelist.txt](warnings_whitelist.txt) and the corresponding erroneous script is available at [erroneous.js](erroneous.js). To run it you have to call _java -jar compiler.jar --js erroneous.js --checks-only --warning&#95;level=VERBOSE --warnings&#95;whitelist&#95;file=warnings&#95;whitelist.txt_.
 

@@ -150,7 +150,58 @@ TODO
 TODO
 
 ### Classes
-TODO
+```javascript
+/**
+ * A constructor function for the type <tt>Car</tt>.
+ *
+ * @public
+ * @constructor
+ */
+function Car () { }
+
+/**
+ * A private property of the class {@link Car} that holds the speed information.
+ *
+ * @private
+ * @type {number}
+ * @default 0
+ */
+Car.prototype._speed = 0;
+
+/**
+ * A getter for the speed of the car.
+ *
+ * @public
+ *
+ * @type {number}
+ * @name Car#speed
+ */
+Object.defineProperty(Car.prototype, 'speed', {
+    get: function () {
+        return this._speed;
+    }
+});
+
+/**
+ * Sets the car instance into drive state.
+ *
+ * @public
+ *
+ * @throws {Error} Thrown if <tt>speed</tt> is not a number.
+ * @throws {Error} Thrown if <tt>speed</tt> is a negative number.
+ *
+ * @param {number} speed A positive number that sets the speed property of the car.
+ */
+Car.prototype.drive = function (speed) {
+    if (typeof speed !== 'number') throw new Error('speed: NaN');
+    if (speed < 0) throw new Error('speed: ' + speed + ' < 0');
+    this._speed = speed;
+}
+```
+
+The illustrated [JSDoc](https://github.com/jsdoc3/jsdoc) comments will generate the class documentation with a constructor function _Car_, the property _speed_, and the method _drive_. The property _&#95;speed_ will not be shown since it is private. If private members should be documented as well, run _jsdoc -p file.js_.
+
+
 
 ### Enums
 TODO
@@ -174,6 +225,8 @@ TODO
 
 The illustrated [JSDoc](https://github.com/jsdoc3/jsdoc) comment generates a page including a description for a file with a general description, the author (including his email address), a copy right statement, a license reference, a TODO and a reference to a required module.
 
+###Namepaths
+TODO
 
 ## Command Line Options
 TODO

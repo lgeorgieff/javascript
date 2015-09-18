@@ -7,7 +7,7 @@
 
 /**
  * A constructor function for the type <tt>Car</tt>.
- *
+ * @classdesc The class <tt>Car</tt> is thought to represent a car.
  * @public
  * @constructor
  */

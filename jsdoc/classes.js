@@ -5,13 +5,51 @@
  * @license LGPL-3.0
  */
 
+var assert = require('assert');
+
 /**
- * A constructor function for the type <tt>Car</tt>.
- * @classdesc The class <tt>Car</tt> is thought to represent a car.
+ * A constructor function for the type <tt>Vehicle</tt>.
+ * @classdesc The class <tt>Vehicle</tt> is thought to be the base type for all forms of vehicles.
  * @public
  * @constructor
  */
+function Vehicle () { }
+
+/**
+ * A property of the class {@link Vehicle} that holds the moving information.
+ *
+ * @protected
+ * @type {boolean}
+ * @default false
+ */
+Vehicle.prototype._isMoving = false;
+
+/**
+ * A getter indicating whether the vehicle is moving or not.
+ *
+ * @public
+ *
+ * @type {boolean}
+ * @name Vehicle#isMoving
+ */
+Object.defineProperty(Vehicle.prototype, 'isMoving', {
+    get: function () {
+        return this._isMoving;
+    }
+});
+
+
+/**
+ * A constructor function for the type <tt>Car</tt>.
+ * @classdesc The class <tt>Car</tt> is thought to represent a car.
+ *
+ * @public
+ * @constructor
+ * @extends Vehicle
+ */
 function Car () { }
+
+require('util').inherits(Car, Vehicle);
 
 /**
  * A private property of the class {@link Car} that holds the speed information.
@@ -50,4 +88,17 @@ Car.prototype.drive = function (speed) {
     if (typeof speed !== 'number') throw new Error('speed: NaN');
     if (speed < 0) throw new Error('speed: ' + speed + ' < 0');
     this._speed = speed;
+    this._isMoving = speed !== 0;
 }
+
+
+var car = new Car();
+assert(car);
+assert.strictEqual(car.isMoving, false);
+assert.strictEqual(car.speed, 0);
+car.drive(3);
+assert.strictEqual(car.isMoving, true);
+assert.strictEqual(car.speed, 3);
+car.drive(0);
+assert.strictEqual(car.isMoving, false);
+assert.strictEqual(car.speed, 0);

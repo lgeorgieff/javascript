@@ -41,7 +41,7 @@ In addition Google's [Closure Compiler](../closure_tools/closure_compiler/README
 * Objects
 * [Classes](classes.js)
 * [Interfaces](interfaces.js)
-* Enums
+* [Enums](enums.js)
 * Modules
 * [Files](files.js)
 * Namepaths

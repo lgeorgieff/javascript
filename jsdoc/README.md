@@ -35,6 +35,7 @@ $ jsdoc myfile1.js myfile2.js ... myfileN.js
 
 In addition Google's [Closure Compiler](../closure_tools/closure_compiler/README.md) defines several tags and ways to express certain meanings. This is documented [here](https://developers.google.com/closure/compiler/docs/js-for-compiler).
 
+The following examples illustrate the usage of the most important tags:
 * [Functions and Methods](functions_and_methods.js)
 * [Types](types.js)
 * [Callbacks](callbacks.js)

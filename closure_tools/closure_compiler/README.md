@@ -48,7 +48,9 @@ You can set the compilation level by the option _--compilation&#95;level_, i.e.
 The default compilation level is _SIMPLE_/_SIMPLE&#95;OPTIMIZATIONS_
 
 # Checking Only
-The closure compiler can be used to only check the code without printing any compiled JavaScript. Therefore use the option _--checks-only_. In the defualt case you will not get all warnings or errors. To achieve this you have to specify the warning level by using the option _--warning&#95;level_ and setting it to one of _QUIET_, _DEFAULT_ or _VERBOSE_. Thus the final call to check your file would be _java -jar compiler.jar --js script.js --checks-only --warning&#95;level=VERBOSE_.
+The closure compiler can be used to only check the code without the actual compilation step and without printing any compiled JavaScript. Therefore use the option _--checks-only_.
+But running the [Closure Compiler](https://developers.google.com/closure/compiler/) with this option will lead to the fact that it will not encounter all errors. One way to use the [Closure Compiler](https://developers.google.com/closure/compiler/) only for checking but still validating all code in the same way as during compilation, is to ignore the _stdout_ by invoking _java -jar closure.jar --js script.js > /dev/null_.
+In the defualt case you will not get all warnings and errors. To achieve this you have to specify the warning level by using the option _--warning&#95;level_ and setting it to one of _QUIET_, _DEFAULT_ or _VERBOSE_.
 
 In addition to the optionc _--warning_level_ you can also use the options
 * _--jscomp&#95;error_
@@ -59,6 +61,8 @@ In addition to the optionc _--warning_level_ you can also use the options
  * Suppresses all warnings of the specified group
 
 You find all warning groups respectively error groups at the [closure compiler github page](https://github.com/google/closure-compiler/wiki/Warnings).
+
+In general the [Closure Compiler](https://developers.google.com/closure/compiler/) will exit with return code _1_ when the compilation ended with an error. In other cases, e.g. warnings or a graceful compilation, the return code is _0_.
 
 To suppress particular errors you can use a whitelist file. The errors specifed in this whitelist will turn errors into warnings. An example is available at [warnings_whitelist.txt](warnings_whitelist.txt) and the corresponding erroneous script is available at [erroneous.js](erroneous.js). To run it you have to call _java -jar compiler.jar --js erroneous.js --checks-only --warning&#95;level=VERBOSE --warnings&#95;whitelist&#95;file=warnings&#95;whitelist.txt_.
 

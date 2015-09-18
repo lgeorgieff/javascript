@@ -37,7 +37,7 @@ In addition Google's [Closure Compiler](../closure_tools/closure_compiler/README
 
 * [Functions and Methods](functions_and_methods.js)
 * [Types](types.js)
-* Callbacks
+* [Callbacks](callbacks.js)
 * Objects
 * [Classes](classes.js)
 * [Interfaces](interfaces.js)

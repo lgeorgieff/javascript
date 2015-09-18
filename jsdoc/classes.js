@@ -16,25 +16,17 @@ var assert = require('assert');
 function Vehicle () { }
 
 /**
- * A property of the class {@link Vehicle} that holds the moving information.
- *
- * @protected
- * @type {boolean}
- * @default false
- */
-Vehicle.prototype._isMoving = false;
-
-/**
  * A getter indicating whether the vehicle is moving or not.
  *
  * @public
+ * @abstract
  *
  * @type {boolean}
  * @name Vehicle#isMoving
  */
 Object.defineProperty(Vehicle.prototype, 'isMoving', {
     get: function () {
-        return this._isMoving;
+        throw new Error('Must be implemented by derived type!');
     }
 });
 
@@ -80,16 +72,39 @@ Object.defineProperty(Car.prototype, 'speed', {
  * @public
  *
  * @throws {Error} Thrown if <tt>speed</tt> is not a number.
- * @throws {Error} Thrown if <tt>speed</tt> is a negative number.
  *
  * @param {number} speed A positive number that sets the speed property of the car.
  */
 Car.prototype.drive = function (speed) {
     if (typeof speed !== 'number') throw new Error('speed: NaN');
-    if (speed < 0) throw new Error('speed: ' + speed + ' < 0');
     this._speed = speed;
     this._isMoving = speed !== 0;
 }
+
+/**
+ * A property of the class {@link Car} that holds the moving information.
+ *
+ * @protected
+ * @type {boolean}
+ * @default false
+ */
+Car.prototype._isMoving = false;
+
+
+/**
+ * A getter indicating whether the car is moving or not.
+ *
+ * @public
+ * @override
+ *
+ * @type {boolean}
+ * @name Car#isMoving
+ */
+Object.defineProperty(Car.prototype, 'isMoving', {
+    get: function () {
+        return this._isMoving;
+    }
+});
 
 
 var car = new Car();

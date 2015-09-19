@@ -39,7 +39,7 @@ The following examples illustrate the usage of the most important tags:
 * [Functions and Methods](functions_and_methods.js)
 * [Types](types.js)
 * [Callbacks](callbacks.js)
-* Objects
+* [Objects](objects.js)
 * [Classes](classes.js)
 * [Interfaces](interfaces.js)
 * [Enums](enums.js)

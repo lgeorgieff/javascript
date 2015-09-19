@@ -25,5 +25,5 @@ function fireCallbackIfTrue(arg, cb) {
  * A global callback type.
  *
  * @callback eventCallback
- * @param {!string} arg The event message.
+ * @param {*} arg The event object.
  */

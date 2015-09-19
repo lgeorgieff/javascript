@@ -46,7 +46,7 @@ The following examples illustrate the usage of the most important tags:
 * [Modules](module.js) and how to use them ([module runner](module_runner.js))
 * [Files](files.js)
 * [Namespaces](namespaces.js)
-* Events
+* [Events](events.js)
 * [Namepaths](namepaths.js)
 
 ## Command Line Options

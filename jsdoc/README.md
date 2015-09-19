@@ -45,7 +45,7 @@ The following examples illustrate the usage of the most important tags:
 * [Enums](enums.js)
 * [Modules](module.js) and how to use them ([module runner](module_runner.js))
 * [Files](files.js)
-* Namespaces
+* [Namespaces](namespaces.js)
 * Events
 * [Namepaths](namepaths.js)
 

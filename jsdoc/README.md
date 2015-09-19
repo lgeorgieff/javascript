@@ -43,8 +43,10 @@ The following examples illustrate the usage of the most important tags:
 * [Classes](classes.js)
 * [Interfaces](interfaces.js)
 * [Enums](enums.js)
-* Modules
+* [Modules](module.js) and how to use them ([module runner](module_runner.js))
 * [Files](files.js)
+* Namespaces
+* Events
 * [Namepaths](namepaths.js)
 
 ## Command Line Options

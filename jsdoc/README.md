@@ -45,7 +45,7 @@ The following examples illustrate the usage of the most important tags:
 * [Enums](enums.js)
 * Modules
 * [Files](files.js)
-* Namepaths
+* [Namepaths](namepaths.js)
 
 ## Command Line Options
 TODO

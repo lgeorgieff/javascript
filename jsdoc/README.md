@@ -50,7 +50,14 @@ The following examples illustrate the usage of the most important tags:
 * [Namepaths](namepaths.js)
 
 ## Command Line Options
-TODO
+The [JSDoc](https://github.com/jsdoc3/jsdoc) tool offers several command line otpions:
+* _--access_: Displays only the access levels given to this option (_public_, _protected_, _private_, _all_) (default: all except _private_)
+* _--configure_: Path to the configuration file.
+* _--private_: Displays also _private_ symbols.
+* _--package_: Path to the project's package file. [JSDoc](https://github.com/jsdoc3/jsdoc) will use several values from the _package.json_ file, such as _name_, _version_, etc.
+* _--recurse_: Recursive iteration through all files and sub-directories.
+* _--readme_: Path to the project's _README.md_ file. If given, the content of the _README.md_ file will be integrated into the generated documentation.
+* _--template_: Path to the template file.
 
 # Configuration
 TODO

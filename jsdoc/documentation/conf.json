@@ -1,0 +1,24 @@
+{
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "includePattern": "module.*\\.js(doc)?$",
+        "include": [
+            "package.json"
+        ]
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./documentation/out/",
+        "readme": "README.md"
+    }
+}

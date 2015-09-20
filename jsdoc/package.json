@@ -1,0 +1,9 @@
+{
+    "name": "jsdoc-example",
+    "version": "1.0.0",
+    "author": "Lukas Georgieff <lukas.georgieff@hotmail.com>",
+    "main": "module_runner.js",
+    "files": [
+        "module.js"
+    ]
+}

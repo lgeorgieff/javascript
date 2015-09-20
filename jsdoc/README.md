@@ -69,11 +69,13 @@ Configuration files for [JSDoc](https://github.com/jsdoc3/jsdoc) are json files 
 * _templates_: Settings enabled to configure the used template.
 * _opts_: Settigs referring to the command line options of the [JSDoc](https://github.com/jsdoc3/jsdoc) tool.
 
-
 An example file used as [JSDoc](https://github.com/jsdoc3/jsdoc) configuration can be found [here](./documentation/conf.json).
 To run it make sure you are in [this](.) directory and run _jsdoc --configure documentation/conf.json ._. The generated documentation will be available under _documentation/out/jsdoc-example/1.0.0/_. The destination folder is configured in [./documentation/conf.json](documentation/conf.json). Further, the file [./package.json](./package.json) is included as source file in [./documentation/conf.json](documentation/conf.json) which generates the subdirectories related to the project's version and name defined in [./package.json](./package.json). Additionally, the option _readme_ is set in [./documentation/conf.json](documentation/conf.json) which includes the content of [this](./README.md) file into the generated documentation's _index.html_ file.
+
 # Templates
-TODO
+[JSDoc](https://github.com/jsdoc3/jsdoc) offers the possibility to configure the layout and style of the generated documentation result. Therefore, you may change its default tmeplate settings by specifying certain options in the _templates_ section of the used configuraiton file. In the [sample configuration file](./documentation/conf.json) you will find the settings _cleverLinks_ and _monospaceLinks_. Other available tags for the default template you will find [here](http://usejsdoc.org/about-configuring-default-template.html).
+
+In addition to set certain properties that influence the default template you may also use a completely different template by setting the _-t &lt;value&gt;_ or _--template &lt;value&gt;_ command line option. You may also use the _template_ property inside the _opts_ property of the used configuration file to change the used template. More available templates you will find on the [JSDoc wiki page](https://github.com/jsdoc3/jsdoc#templates).
 
 # Tags Offered by the Closure Compiler
 In addition to the [JSDoc tags](http://usejsdoc.org/index.html) defined in [JSDoc](https://github.com/jsdoc3/jsdoc) version 3, the [Closure Compiler](../closure_tools/closure_compiler/README.md) defines additional tags that it includes as further information during the compilation process. These tags are documented [here](https://developers.google.com/closure/compiler/docs/js-for-compiler).

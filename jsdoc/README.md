@@ -60,8 +60,18 @@ The [JSDoc](https://github.com/jsdoc3/jsdoc) tool offers several command line ot
 * _--template_: Path to the template file.
 
 # Configuration
-TODO
+For specifying certain options, [JSDoc](https://github.com/jsdoc3/jsdoc) is able to process a configuration file. You can set the configuration file via the option _-c &lt;path to config&gt;_ or _--configure &lt;path to config&gt;_. If no configuration file is set, [JSDoc](https://github.com/jsdoc3/jsdoc) assumes a default configuration as described [here](http://usejsdoc.org/about-configuring-jsdoc.html#configuration-file).
 
+Configuration files for [JSDoc](https://github.com/jsdoc3/jsdoc) are json files and contain basically the following properties:
+* _tags_: Settings referring to the [JSDoc](https://github.com/jsdoc3/jsdoc) tags.
+* _source_: Settings referring to the file names and paths of the source files to be parsed by [JSDoc](https://github.com/jsdoc3/jsdoc).
+* _plugins_: Settings referring to enabled plugins.
+* _templates_: Settings enabled to configure the used template.
+* _opts_: Settigs referring to the command line options of the [JSDoc](https://github.com/jsdoc3/jsdoc) tool.
+
+
+An example file used as [JSDoc](https://github.com/jsdoc3/jsdoc) configuration can be found [here](./documentation/conf.json).
+To run it make sure you are in [this](.) directory and run _jsdoc --configure documentation/conf.json ._. The generated documentation will be available under _documentation/out/jsdoc-example/1.0.0/_. The destination folder is configured in [./documentation/conf.json](documentation/conf.json). Further, the file [./package.json](./package.json) is included as source file in [./documentation/conf.json](documentation/conf.json) which generates the subdirectories related to the project's version and name defined in [./package.json](./package.json). Additionally, the option _readme_ is set in [./documentation/conf.json](documentation/conf.json) which includes the content of [this](./README.md) file into the generated documentation's _index.html_ file.
 # Templates
 TODO
 

@@ -76,4 +76,4 @@ To run it make sure you are in [this](.) directory and run _jsdoc --configure do
 TODO
 
 # Tags Offered by the Closure Compiler
-TODO: Go through all supported contructs of the closure compiler: https://developers.google.com/closure/compiler/docs/js-for-compiler
+In addition to the [JSDoc tags](http://usejsdoc.org/index.html) defined in [JSDoc](https://github.com/jsdoc3/jsdoc) version 3, the [Closure Compiler](../closure_tools/closure_compiler/README.md) defines additional tags that it includes as further information during the compilation process. These tags are documented [here](https://developers.google.com/closure/compiler/docs/js-for-compiler).

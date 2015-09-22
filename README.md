@@ -11,6 +11,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
  1. [events](node.js/060_events/README.md)
  1. [console](node.js/150_console/README.md)
  1. [streams](node.js/110_streams/README.md)
+ 1. [smalloc](node.js/120_smalloc/README.md)
  1. [process](node.js/070_processes/README.md)
  1. [domains](node.js/090_domains/README.md)
  1. [repl](node.js/130_repl/README.md)

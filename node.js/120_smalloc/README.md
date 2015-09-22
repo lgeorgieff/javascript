@@ -1,0 +1,3 @@
+_smalloc_ was originally thought to expose functionality that directly handles raw memory and represents it as a buffer in the Node.js runtime. It was marked as experimental and is no longer available (was removed between release 0.12.7 and 4.0.0).
+
+For further information on the API docs of version 0.12.x take a look at the official [Node.js documentation](https://nodejs.org/docs/latest-v0.12.x/api/smalloc.html).

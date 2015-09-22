@@ -32,5 +32,8 @@ Google's closure compiler is a JavaScript to JavaScript compiler. It generates a
 JSDoc is a special kind of comments and a tool for automatically generating code documentation from code comments.
  1. [JSDoc](jsdoc/README.md)
 
+# Unit Tests
+TODO: present unit testing frameworks and code coverage frameworks
+
 #Best Practices
 TODO

@@ -7,3 +7,8 @@ The _var_ keyword in _ES5_ is used to declare/define variables either globally o
 _ES6_ therefore introduces the keyword _let_ which allows to declare/define a variable in the scope of a block only. An important difference in addition to the scope-visibility is also the missing hoisting when using _let_.
 
 You can find several examples of block scoping in [let.js](./let.js).
+
+#Constant References
+_ES6_ defines the keyword _const_ which can be used to declare a constant reference to an object. A reference defined with _const_ must be initialized in the begining and cannot be changed later. The object itself which is referenced is not immutable, i.e. it still can be modifed.
+
+You can find several examples of constant reference in [const.js](./const.js).

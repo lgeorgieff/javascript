@@ -8,7 +8,16 @@ _ES6_ therefore introduces the keyword _let_ which allows to declare/define a va
 
 You can find several examples of block scoping in [let.js](./let.js).
 
-#Constant References
+# Constant References
 _ES6_ defines the keyword _const_ which can be used to declare a constant reference to an object. A reference defined with _const_ must be initialized in the begining and cannot be changed later. The object itself which is referenced is not immutable, i.e. it still can be modifed.
 
 You can find several examples of constant reference in [const.js](./const.js).
+
+# Arrow Functions
+In general arrow functions are a shorter way to define anonymous functions respectively lambda functions in JavaScript. The following example illustrates the short arrow syntax to define a function:
+```javascript
+['a', 'b', 'C', 'd', 'e', 'F'].filter((item) => { return item === item.toLowerCase(); });
+```
+One special thing to know about arrow functions is that it is not possible to change the _this_ context, i.e. once the arrow function is defined the _this_ argument is bound to its context for its entire lifetime. Calling _bind()_ on the created arrow function has no effect, as well.
+
+You can find several examples of arrow functions in [arrow_functions.js](./arrow_functions.js).

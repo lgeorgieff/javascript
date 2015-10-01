@@ -26,7 +26,7 @@ let assert = require('assert');
  * @type {Map<string, number> | Map<object, number> | Map<NaN, number>}
  */
 let stringNumberMap = new Map();
-// Instead of the property length a Mapo instance uses the property size to get number of entries.
+// Instead of the property length a Map instance uses the property size to get number of entries.
 assert.strictEqual(stringNumberMap.size, 0);
 stringNumberMap.set('0', 0);
 assert.strictEqual(stringNumberMap.size, 1);
@@ -41,14 +41,15 @@ stringNumberMap.set('2', 2);
 assert.strictEqual(stringNumberMap.size, 3);
 // Calling set() on a key that already exists overwrites the value in the existing entry.
 assert.strictEqual(stringNumberMap.get('2'), 2);
-// Calling get() on a key that already does not exist returns undefined.
+// Calling get() on a key that does not exist yet returns undefined.
 assert.strictEqual(stringNumberMap.get('123'), undefined);
 
 // Remove all entries.
 stringNumberMap.clear();
 assert.strictEqual(stringNumberMap.size, 0);
 stringNumberMap.set('0', 0);
-// The keys need not to be of the same type - the values can be also from different types.
+// The keys need not to be of the same type.
+// The values can be also from different types.
 let key2 = {value: '2'};
 stringNumberMap.set(key2, 2);
 let key3 = {value: '3'};
@@ -59,7 +60,7 @@ assert.strictEqual(stringNumberMap.size, 5);
 
 // The method has() indicates whether a key exists or not.
 assert(stringNumberMap.has(key2));
-// The methods has() and get() identify the keys in case of objects by the reference not by the value.
+// The methods has() and get() identify the keys in case of objects by their references not by their values.
 assert(!stringNumberMap.has({value: '2'}));
 assert(stringNumberMap.has('1'));
 

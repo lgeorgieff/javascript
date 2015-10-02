@@ -30,7 +30,8 @@ ES6 defines several collection types that makes things easier:
 * [WeakSet](./weak_set.js)
 
 # Iterables and Iterators
-ES6 specifies two protocols the _iterable_ and the _iterator_ protocol. They help to implement custom containers which may be used in for-of-loops which are also defined in ES6.
+ES6 specifies two protocols the _iterable_ and the _iterator_ protocol. They help to implement custom containers which may be used in for-of-loops which are also defined in ES6. But they are also implemented in types such as _Map_, _Set_ and _Array_.
+
 The _iterable_ API is an instance method that returns an _iterator_ object which is used to iterator through the entire container. This method is declared by using
 ```javascript
 function MyContainer () { /* ... */ }

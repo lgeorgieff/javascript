@@ -21,3 +21,10 @@ In general arrow functions are a shorter way to define anonymous functions respe
 One special thing to know about arrow functions is that it is not possible to change the _this_ context, i.e. once the arrow function is defined the _this_ argument is bound to its context for its entire lifetime. Calling _bind()_ on the created arrow function has no effect, as well.
 
 You can find several examples of arrow functions in [arrow_functions.js](./arrow_functions.js).
+
+# Collections
+ES6 defines several collection types that makes things easier:
+* [Map](./map.js)
+* [Set](./set.js)
+* WeakMap
+* WeakSet

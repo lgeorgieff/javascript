@@ -26,5 +26,5 @@ You can find several examples of arrow functions in [arrow_functions.js](./arrow
 ES6 defines several collection types that makes things easier:
 * [Map](./map.js)
 * [Set](./set.js)
-* WeakMap
-* WeakSet
+* [WeakMap](./weak_map.js)
+* [WeakSet](./weak_set.js)

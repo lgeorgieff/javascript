@@ -23,7 +23,7 @@ let assert = require('assert');
 /**
  * A Map instance used for illustrating the Map functionality.
  *
- * @type {Map<string, number> | Map<object, number> | Map<NaN, number>}
+ * @type {Map<*, *>}
  */
 let stringNumberMap = new Map();
 // Instead of the property length a Map instance uses the property size to get number of entries.

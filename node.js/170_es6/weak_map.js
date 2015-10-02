@@ -36,7 +36,7 @@ assert.throws(function () { testMap.set(1, '1'); }, TypeError);
 assert.throws(function () { testMap.set('2', 2); }, TypeError);
 assert.throws(function () { testMap.set(NaN, ''); }, TypeError);
 
-// A key requires a string reference to no being garbage collected when used in a WeakMap
+// A key requires a strong reference to no being garbage collected when used in a WeakMap
 let key1 = {value: 1};
 assert.deepEqual(testMap.set(key1, 1), testMap);
 assert(testMap.has(key1));
@@ -45,10 +45,10 @@ let key2 = {value: '2'};
 testMap.set(key2, '2');
 assert(testMap.has(key2));
 assert.strictEqual(testMap.get(key2), '2');
-// If no string reference is used to an object used as a key, it will be removed by the garbage collector.
+// If no strong reference is used to an object used as a key, it will be removed by the garbage collector.
 testMap.set(new String('abc'), NaN);
-// For the get() and has() method a reference comparison is used, i.e. by passing an equal value will not lead to the
-// expected result. Indeed in this case the object could already be garbage collected, since no string reference for
+// For the get() and has() method a reference comparison is used, i.e. passing an equal value will not lead to the
+// expected result. Indeed in this case the object could already be garbage collected, since no strong reference to
 // this key exists.
 assert(!testMap.delete(new String('abc')));
 // The delete() method allows to remove entries from the WeakMap if a strong reference to the key value exists.

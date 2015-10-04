@@ -61,17 +61,17 @@ You can find an example of symbols in [symbols.js](./symbols.js).
 # Numeric Literals
 The JavaScript standard defines mutliple notations for numbers, i.e.:
 * Binary notation
-  * 0[bB][0-1]+
+  * [&#92;-+]?0[bB][0-1]+
   * If a number > 1 follows the b/B, an error is raised.
 * Octal notation
-  * 0[0-7]+
+  * [&#92;-+]?0[0-7]+
   * If a number > 7 follows the leading 0, the number is parsed as a decimal number.
   * Not allowed in strict mode.
 * Decimal notation
-  * [0-9]+
+  * [&#92;-+]?[0-9]+
   * The standard notation for numbers.
 * Hexadecimal notation
-  * 0&#91;xX&#93;([0-1]|[A-F][a-f])+
+  * [&#92;-+]?0&#91;xX&#93;([0-1]|[A-F][a-f])+
   * If a character > f/F follows the x/X, an error is raised.
 
 You can find several examples of numeric literals in [numeric_literal.js](./numeric_literals.js).

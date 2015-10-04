@@ -75,3 +75,13 @@ The JavaScript standard defines mutliple notations for numbers, i.e.:
   * If a character > f/F follows the x/X, an error is raised.
 
 You can find several examples of numeric literals in [numeric_literal.js](./numeric_literals.js).
+
+# Object Literal Notation
+ES6 defines several shorthands for defining objects via the objetc literal notation:
+* If the object defines a property that is bound to a variable with the same name as the property, it is not necessary to assign the value explicitly.
+* Functions can be defined directly as properties.
+* Getters and setters may be used within an object notation via the _get_ and _set_ keyword.
+
+In addition the ES6 standards defines the possibility to set the prototype of an object via the _&#95;&#95;proto&#95;&#95;_ property.
+
+You can find an example of an object literal notation in [object_literals.js](./object_literals.js).

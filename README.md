@@ -16,6 +16,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
  1. [domains](node.js/090_domains/README.md)
  1. [repl](node.js/130_repl/README.md)
  1. [event loop](node.js/160_event_loop/README.md)
+ 1. [ES6](node.js/170_es6/README.md)
 
 # Closure Compiler
 Google's closure compiler is a JavaScript to JavaScript compiler. It generates a much smaller code version of the input files. It can be used for performace improvement but also for error checking.

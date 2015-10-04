@@ -50,3 +50,10 @@ Genertor functions are not only useful for implementing the _iterable_ and _iter
 It is also possible to chain generators, i.e. a generator function can return a second generator function by using the keyword _yield*_ instead of _yield_.
 
 You can find several examples of generator functions in [generators.js](./generators.js).
+
+# Symbols
+Symbols are primitive data types that may be used as property identifiers of objects. Once a symbol is created it is immutable and unique, i.e. _Symbol('a') !== Symbol('a')_.
+
+ES6 defines several symbols, e.g. _Symbol.iterator_, _Symbol.match_, _Symbol.replace_, etc.
+
+You can find an example of symbols in [symbols.js](./symbols.js).

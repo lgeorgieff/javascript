@@ -43,3 +43,10 @@ The _iterator_ that is returned by this method can be implemented in two ways:
 2. It is also possible to use generator functions which yield all the values of the container.
 
 You can find an example of an iterable in [iterable.js](./iterable.js).
+
+## Generator Functions
+Genertor functions are not only useful for implementing the _iterable_ and _iterator_ protocols. They can also be used to implement a kind of lazy evaluation, e.g. for inifinite lists.
+
+It is also possible to chain generators, i.e. a generator function can return a second generator function by using the keyword _yield*_ instead of _yield_.
+
+You can find several examples of generator functions in [generators.js](./generators.js).

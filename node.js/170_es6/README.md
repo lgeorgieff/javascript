@@ -97,3 +97,16 @@ A promise may be in one of the following states:
 In addition the methods _all_ and _race_ are provided. _all_ takes an array of promises and evaluates to the state fulfilled or rejected when either all given promises evaluate to fulfilled or at least one to rejected state. _race_ takes an array of promises and evaluates to the state fulfilled or rejected when either one of the given promises evaluates to fulfilled or to rejected state.
 
 You can find an example of how to use promises in [promises.js](./promises.js).
+
+# New String Methods
+ES6 defines several new methods for the _string_ type to make _string_ handling easier:
+* _startsWith(searchString[, position])_
+* _endsWith(searchString[, position])_
+* _includes(searchString[, position])_
+* _repeat(count)_
+* _codePointAt(pos)_
+* _normalize([form])_
+
+In addition the static method _fromCodePoint(num1[, ...[, numN]])_ is defined and a literal notation for unicode strings is introduced, e.g. _'\u{2F804}'_.
+
+You can find some examples of the new string features in [string.js](./string.js).

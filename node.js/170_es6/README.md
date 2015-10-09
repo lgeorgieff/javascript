@@ -85,3 +85,15 @@ ES6 defines several shorthands for defining objects via the objetc literal notat
 In addition the ES6 standards defines the possibility to set the prototype of an object via the _&#95;&#95;proto&#95;&#95;_ property.
 
 You can find an example of an object literal notation in [object_literals.js](./object_literals.js).
+
+# Promises
+Since JavaScript is based on asynchronous principles, very often a lot of (nested) callbacks are used. This can cause code to be very unstructured and deeply nested. ES6 defines an object, the _Promise_, that solves this problem by offering a _resolve_ and _reject_ method inside the asynchronous function and a _then_ and _catch_ method outside the asynchronous function to allow chaining of promises.
+
+A promise may be in one of the following states:
+* pending: initial state
+* fulfilled: operation completed successfully
+* rejected: operation failed
+
+In addition the methods _all_ and _race_ are provided. _all_ takes an array of promises and evaluates to the state fulfilled or rejected when either all given promises evaluate to fulfilled or at least one to rejected state. _race_ takes an array of promises and evaluates to the state fulfilled or rejected when either one of the given promises evaluates to fulfilled or to rejected state.
+
+You can find an example of how to use promises in [promises.js](./promises.js).

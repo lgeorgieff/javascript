@@ -110,3 +110,15 @@ ES6 defines several new methods for the _string_ type to make _string_ handling 
 In addition the static method _fromCodePoint(num1[, ...[, numN]])_ is defined and a literal notation for unicode strings is introduced, e.g. _'\u{2F804}'_.
 
 You can find some examples of the new string features in [string.js](./string.js).
+
+# Template Strings
+In addition to the normal way of defining strings, it is possible to use so-caled template strings. This means you can directly use expressions inside a string value. A template string is enclosed by backticks (`). It may contain string parts and expressions. An expression is of the form _${EXPRESSION}_.
+```javascript
+let str1 = `Hello World!`;
+let str2 = `Hello
+World!`;
+let str3 = `${Date()}: Hello World`;
+let someValue = 123;
+let str4 = `The value someValue is: ${someValue}`;
+```
+You can find some examples of template strings in [template_strings.js](./template_strings.js).

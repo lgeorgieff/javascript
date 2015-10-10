@@ -122,3 +122,11 @@ let someValue = 123;
 let str4 = `The value someValue is: ${someValue}`;
 ```
 You can find some examples of template strings in [template_strings.js](./template_strings.js).
+
+# Spread Operator
+The spread operator allows to destructure arrays, e.g. the array _[1, 2]_ can be passed to a function of the form _add(arg1, arg2)_ by writing _add(...[1, 2])_. In this case the apply function is not needed anymore.
+In addition it is also possible to define functions with variadic arguments, e.g. _concatenateString(...strings)_.
+
+The spread operator can be used with [Node.js](https://nodejs.org) only when specifying the command line argument _--es-staging_.
+
+You can find some examples of the spread operator in [spread_operator.js](./spread_operator.js).

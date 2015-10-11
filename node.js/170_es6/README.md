@@ -130,3 +130,26 @@ In addition it is also possible to define functions with variadic arguments, e.g
 The spread operator can be used with [Node.js](https://nodejs.org) only when specifying the command line argument _--es-staging_.
 
 You can find some examples of the spread operator in [spread_operator.js](./spread_operator.js).
+
+# Typed Arrays
+The typed arrays feature allows to efficiently process binary data in JavaScript. For this ES6 defines several types of array-like structures that are restricted to a particular type, such as:
+* Int8Array
+* Uint8Array
+* Uint8ClampedArray
+* Int16Array
+* Uint16Array
+* Int32Array
+* Uint32Array
+* Float32Array
+* Float64Array
+
+Note: typed arrays are not instances of _Array_, i.e. _Array.isArray()_ will return false in case of a typed array.
+
+In general working with typed arrays requires:
+
+1. Create a raw data buffer of the type _ArrayBuffer_
+2. Create a _DataView_ instance that is bound to the allocated buffer
+
+The allocated _ArrayBuffer_ does not allow to access the raw data directly. But via a _DataView_ instance which refers to the buffer it is possible to access and modify the buffer's data. Is is also possible to use mutliple data views on one buffer.
+
+You can find some examples of typed arrays in [typed_arrays.js](./typed_arrays.js).

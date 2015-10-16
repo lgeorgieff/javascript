@@ -165,3 +165,10 @@ It allows the definition of classes similar to the Java syntax, i.e. it provides
 * the possiblity to use methods of the super type via the _super_ keyword
 
 You can find some examples of the new class features of ES6 in [classes.js](./classes.js).
+
+# Block Level Function Declaration
+ES5 allows nested function declarations but does not allow function declarations inside blocks. To overcome this it is necessary to use function expressions inside blocks.
+
+ES6 in contrast permits function declaration in block scopes. A function declared inside a block scope is hoisted within the block scope but it is not visible outside the block scope.
+
+You can find an example of a function declaration inside a block scope at [block_level_function_declaration.js](./block_level_function_declaration.js).

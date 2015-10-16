@@ -153,3 +153,15 @@ In general working with typed arrays requires:
 The allocated _ArrayBuffer_ does not allow to access the raw data directly. But via a _DataView_ instance which refers to the buffer it is possible to access and modify the buffer's data. Is is also possible to use mutliple data views on one buffer.
 
 You can find some examples of typed arrays in [typed_arrays.js](./typed_arrays.js).
+
+# Classes
+ES6 defines the new keyword _class_ which abstracts the protype based type system of JavaScript.
+It allows the definition of classes similar to the Java syntax, i.e. it provides:
+* the possibility to define classes as a whole via the _class_ keyword
+ * allows the definition of a constructor
+ * allows the definition of instance methods
+ * allows the definition of static methods
+* the possibility to define class hierarchies via the keyword _extends_
+* the possiblity to use methods of the super type via the _super_ keyword
+
+You can find some examples of the new class features of ES6 in [classes.js](./classes.js).

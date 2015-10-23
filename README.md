@@ -14,6 +14,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
  1. [smalloc](node.js/120_smalloc/README.md)
  1. [process](node.js/070_processes/README.md)
  1. [domains](node.js/090_domains/README.md)
+ 1. [buffers](node.js/100_buffers/README.md)
  1. [repl](node.js/130_repl/README.md)
  1. [event loop](node.js/160_event_loop/README.md)
  1. [ES6](node.js/170_es6/README.md)

@@ -46,4 +46,11 @@ The _Buffer_ class offers the following methods for reading data from the buffer
 * buffer.toString([encoding][, start][, end])
 * buffer.toJSON()
 
+The _Buffer_ class also supports the iterator and for-of-loop of ES6. Therefore it offers the following methods*
+* buffer.values()
+* buffer.keys()
+* buffer.entries()
+
 You can find an example script at [buffer.js](./buffer.js).
+
+The full documentation of the _Buffer_ class is available at the [node.js documentation page](https://nodejs.org/api/buffer.html).

@@ -4,7 +4,7 @@ This repository covers some interesting code snippets for learning JavaScript an
 # Node.js
 This section provides some JavaScript snippets that are special to Node.js. Node.js is a JavaScript runtime environment that is used for server-side JavaScript execution and is based on Google's [V8](https://code.google.com/p/v8/) JavaScript engine.
  1. [modules](node.js/000_modules/README.md)
- 1. [debugger](node.js/010_debugging/README.md)
+ 1. [debugging](node.js/010_debugging/README.md)
  1. [assert](node.js/020_assertions/README.md)
  1. [globals](node.js/040_globals/README.md)
  1. [util](node.js/050_utilities/README.md)

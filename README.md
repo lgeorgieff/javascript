@@ -21,6 +21,7 @@ This section provides some JavaScript snippets that are special to Node.js. Node
 
 # Memory
 [This section](./memory/README.md) contains several examples of memory handling and garbage collection in a JavaScript runtime environment.
+In addition some patterns are presented that may cause memory leaks.
 
 # Closure Compiler
 Google's closure compiler is a JavaScript to JavaScript compiler. It generates a much smaller code version of the input files. It can be used for performance improvement but also for error checking.

@@ -8,3 +8,5 @@ In some cases memory leaks can occur, i.e.
 * the programmer creates unintended references from deleted objects to some node that is still in the graph and so prevents the garbage collector from cleaning the corresponding memory
 
 The file [00_garbage_collection_example.js](./00_garbage_collection_example.js) illustrates general garbage collection in JavaScript. The file [10_circular_references.js](./10_circular_references.js) illustrates how circular dependencies are handled in a JavaScript environment.
+
+For more information take a look at http://javascript.info/tutorial/memory-leaks.

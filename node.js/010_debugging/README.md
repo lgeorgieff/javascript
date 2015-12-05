@@ -114,3 +114,10 @@ The [final profiling log](./v8.profile) contains sevaral sections, e.g.:
 * [Bottom up (heavy) profile]
 
 The most interesting part for the profiling session of [profiling.js](./profiling.js) is the last section [Bottom up (heavy) profile] in [v8.profile](./v8.profile). In this section you can get all information to compare the 3 different implementations of _multisplit_, i.e. _multisplitFor_, _multisplitForOf_ and _multisplitForEach_. Each of these functions is listed with its ticks and the ticks of each inner invocation as a tree structure.
+
+More information on profiling [node.js](https://nodejs.org/en/) applications can be found at:
+* https://nodejs.org/en/docs/guides/simple-profiling/
+* http://stackoverflow.com/questions/1911015/how-to-debug-node-js-applications/16512303#16512303
+* https://strongloop.com/strongblog/node-js-performance-tip-cpu-profiler/
+ * https://strongloop.com/strongblog/node-js-performance-garbage-collection/
+ * https://strongloop.com/strongblog/node-js-performance-heap-profiling-tip/

@@ -1,12 +1,12 @@
 # Debugging JavaScript via V8-Debugger
 
-Node.js exposes an API for the V8 debugger. This document covers the most important functionality of the debugger. A full documentation is avalable as part of the [Node.js documentation](https://nodejs.org/api/debugger.html).
+node.js exposes an API for the V8 debugger. This document covers the most important functionality of the debugger. A full documentation is avalable as part of the [node.js documentation](https://nodejs.org/api/debugger.html).
 
-To start the debugger of Node.js you must pass the argument _debug_, e.g. _node debug test.js_. It will stop execution at the first statement in the script.
+To start the debugger of node.js you must pass the argument _debug_, e.g. _node debug test.js_. It will stop execution at the first statement in the script.
 
-To set some breakpoints in a script enter _debugger;_ into the places where you want the debugger to do a break. Note: the execution will be only stopped at these points when the Node.js runtime is started with the _debug_ argument. A sample file that can be used for debugging is [test_1.js](test_1.js) it includes [test_2.js](test_2.js) where a breakpoint is defined.
+To set some breakpoints in a script enter _debugger;_ into the places where you want the debugger to do a break. Note: the execution will be only stopped at these points when the node.js runtime is started with the _debug_ argument. A sample file that can be used for debugging is [test_1.js](test_1.js) it includes [test_2.js](test_2.js) where a breakpoint is defined.
 
-The next chapters describe the options that are available in the debugger, i.e. for executing them just enter them into the Node.js' debugger terminal.
+The next chapters describe the options that are available in the debugger, i.e. for executing them just enter them into the node.js' debugger terminal.
 
 ## help
 Print a message that contains all available options/commands. Usually the set of options that is described in the following chapters.
@@ -72,7 +72,7 @@ Displays a list of all breakpoints when entered into the debugger terminal.
 Displays the version of v8 when entered into the debugger terminal.
 
 ## Useful Modules
-In addition to the Node.js/V8 debugger there are also some Node.js moduels and functions which can be useful for debugging:
+In addition to the node.js/V8 debugger there are also some node.js moduels and functions which can be useful for debugging:
 * [util](../050_utilities/README.md), especially the [degublog](../050_utilities/README.md#utildebuglogsection) function
 * [console](https://nodejs.org/api/console.html)
 
@@ -100,3 +100,17 @@ node debug test_1.js
 For more information on [node-inspector](https://www.npmjs.com/package/node-inspector) take a look at:
 * https://www.npmjs.com/package/node-inspector
 * https://github.com/node-inspector/node-inspector
+
+# Profiling node.js Applications
+[V8](https://github.com/v8/v8/wiki) allows to set several profiler options on command line which also can be used for [node.js](https://nodejs.org/en/). With the call _node --prof profiling.js_ the JavaScript source file [profiling.js](./profiling.js) is profiled and [V8](https://github.com/v8/v8/wiki) creates a log in the current working directory of the form _isolate-...-v8.log_, e.g. [isolate-0x2419bf0-v8.log](./isolate-0x2419bf0-v8.log).
+
+To generate a more readable version you need to execute the script [tick-processor.js](https://github.com/nodejs/node/blob/master/tools/v8-prof/tick-processor.js) which is provided in the [node.js](https://nodejs.org/en/) sources. The [npm](https://github.com/npm/npm) module [node-tick-processor](https://www.npmjs.com/package/node-tick-processor) can be used to generate this file as well.
+
+The [final profiling log](./v8.profile) contains sevaral sections, e.g.:
+* [Shared libraries]
+* [JavaScript]
+* [C++]
+* [GC]
+* [Bottom up (heavy) profile]
+
+The most interesting part for the profiling session of [profiling.js](./profiling.js) is the last section [Bottom up (heavy) profile] in [v8.profile](./v8.profile). In this section you can get all information to compare the 3 different implementations of _multisplit_, i.e. _multisplitFor_, _multisplitForOf_ and _multisplitForEach_. Each of these functions is listed with its ticks and the ticks of each inner invocation as a tree structure.

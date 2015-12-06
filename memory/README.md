@@ -9,7 +9,10 @@ In some cases memory leaks can occur, i.e.
 
 The file [00_garbage_collection_example.js](./00_garbage_collection_example.js) illustrates general garbage collection in JavaScript. The file [10_circular_references.js](./10_circular_references.js) illustrates how circular dependencies are handled in a JavaScript environment.
 
-For more information take a look at http://javascript.info/tutorial/memory-leaks.
+For more information take a look at:
+* https://strongloop.com/strongblog/node-js-performance-garbage-collection/
+* https://strongloop.com/strongblog/node-js-performance-heap-profiling-tip/
+* http://javascript.info/tutorial/memory-leaks
 
 # Memory Leak Patterns in JavaScript
 

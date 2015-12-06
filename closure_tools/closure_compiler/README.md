@@ -120,7 +120,7 @@ In addition to the "normal" type annotations the [closure compiler](https://deve
 
 More examples on JSDoc are available [here](../../jsdoc/README.md).
 
-You find a simple example script at [jsdoc_annotations.js](jsdoc_annotations.js).
+You find a simple example script at [jsdoc_annotations.js](jsdoc_annotations.js) which includes some basic annotations but also demonstrates how to cast data types via [JSDoc](https://github.com/jsdoc3/jsdoc) comments.
 
 To make [JSDoc](https://github.com/jsdoc3/jsdoc) understanding the [closure compiler](https://developers.google.com/closure/compiler/) annotations you have to set the the [closure compiler](https://developers.google.com/closure/compiler/) dictionary in the [JSDoc](https://github.com/jsdoc3/jsdoc) configuration file. Additionally you have to implement a [JSDoc](https://github.com/jsdoc3/jsdoc) plugin for the [closure compiler](https://developers.google.com/closure/compiler/) tags that are not known by [JSDoc](https://github.com/jsdoc3/jsdoc), e.g. the [@suppress](https://github.com/google/closure-compiler/wiki/Warnings#suppress-tags) tag. More information on [JSDoc](https://github.com/jsdoc3/jsdoc) plugins can be found at http://usejsdoc.org/about-plugins.html. At https://github.com/lgeorgieff/js_base/blob/master/tools/jsdoc_plugins/closure.js you can find a [JSDoc](https://github.com/jsdoc3/jsdoc) plugin implementation for the [closure compiler](https://developers.google.com/closure/compiler/) tag [@suppress](https://github.com/google/closure-compiler/wiki/Warnings#suppress-tags).
 

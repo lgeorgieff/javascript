@@ -1,10 +1,11 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 07/12/2015
+// Last modified: 12/06/2015
 // Description: Illustrates how to use jsdoc anntotations to improve the compilation results of the closure compiler.
 // Compilation: ccompiler --warning_level=VERBOSE --compilation_level=ADVANCED_OPTIMIZATIONS --jscomp_error=const
-//               --js jsdoc_annotations.js
-// Compilation: ccompiler --warning_level=VERBOSE --compilation_level=ADVANCED_OPTIMIZATIONS --js jsdoc_annotations.js
+//              --language_in=ECMASCRIPT6_STRICT --language_out=ECMASCRIPT5_STRICT --js jsdoc_annotations.js
+// Compilation: ccompiler --warning_level=VERBOSE --compilation_level=ADVANCED_OPTIMIZATIONS
+//              --language_in=ECMASCRIPT6_STRICT --language_out=ECMASCRIPT5_STRICT --js jsdoc_annotations.js
 // ====================================================================================================================
 
 // ====================================================================================================================
@@ -18,6 +19,8 @@
 // You should have received a copy of the GNU General Public License along with this program.
 // If not, see http://www.gnu.org/licenses/.
 // ====================================================================================================================
+
+'use strict';
 
 /**
  * @preserve
@@ -48,3 +51,20 @@ console.log('myCrazyFun(arg): ' + myCrazyFun(123));
 // If compiled with --jscomp_error=const, throws an error. Otherwise a warning is shown
 MY_CONST = 'New value';
 console.log('MY_CONST: ' + MY_CONST);
+
+/**
+ * A JSON string that will be used to create a JS array.
+ *
+ * @type {string}
+ */
+let someJson = '[1, 2, 3, 4, 5, 6]';
+
+/**
+ * A JS array that is generated from a JSON string. Here the return value from <tt>JSON.parse</tt> must be casted to
+ * <tt>!Array&ltnumber&gt;</tt>.
+ *
+ * @type {!Array<number>}
+ */
+let someObject = /** @type {!Array<number>} */ (JSON.parse(someJson));
+
+for(let item of someObject) console.log(`item: ${item}`);

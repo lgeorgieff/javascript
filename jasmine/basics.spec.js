@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/19/2015
+// Last modified: 12/20/2015
 // Description: Shows the basic principles of the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -201,3 +201,11 @@ describe("fail() can be used to signal an error and make the test fail", functio
     });
 });
 
+describe('Demonstrates the nesting of specs.', () => {
+    it('outer spec', () => {
+        expect(true).toEqual(true);
+        it('inner spec', () => {
+            expect(true).toEqual(true);
+        });
+    });
+});

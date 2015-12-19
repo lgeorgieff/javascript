@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "jasmine_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "JASMINE_CONFIG_PATH=./jasmine.config.json jasmine"
+  },
+  "author": "",
+  "license": "LGPL",
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
+}

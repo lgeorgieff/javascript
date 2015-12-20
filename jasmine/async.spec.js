@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/20/2015
+// Last modified: 12/21/2015
 // Description: Shows the possibilities of time-dependent and async testing of the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -53,5 +53,44 @@ describe('Simulates the JS clock to test time-dependent functions', () => {
         clearTimeout(id);
         jasmine.clock().tick(TIMEOUT);
         expect(hasBeenCalled).toEqual(2);
+    });
+});
+
+// The property jasmine.DEFAULT_TIMEOUT_INTERVAL can be set to change the timeout of each asynchronous function that is
+// used with done() in a beforeEach, afterEach, beforeAll, afterAll and it function. In case where the timeout passed
+// before done() is called, the test is encountered as failed. If done() is not called in time in one of beforeEach,
+// afterEach, beforeAll, afterAll, the related test will fail.
+describe('Test async setup, teardown and spec functions', () => {
+    const TIMEOUT = 100;
+
+    let hasBeenCalled = 0;
+    beforeEach((done) => {
+        setTimeout(() => {
+            ++hasBeenCalled;
+            done();
+        }, TIMEOUT);
+    });
+    afterEach((done) => {
+        setTimeout(() => {
+            ++hasBeenCalled;
+            done();
+        }, TIMEOUT);
+    });
+    beforeAll((done) => {
+        setTimeout(() => {
+            ++hasBeenCalled;
+            done();
+        }, TIMEOUT);
+    });
+
+    it('Tests setTimeout with done() and done.fail()', (done) => {
+        expect(hasBeenCalled).toEqual(2);
+        setTimeout(() => done(), TIMEOUT);
+        setTimeout(() => done.fail('This callback should be be called!'), TIMEOUT + 1000);
+    });
+
+    it('Tests afterEach', (done) => {
+        expect(hasBeenCalled).toEqual(4);
+        done();
     });
 });

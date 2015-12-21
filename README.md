@@ -39,7 +39,9 @@ JSDoc is a special kind of comments and a tool for automatically generating code
  1. [JSDoc](jsdoc/README.md)
 
 # Unit Tests
-TODO: present unit testing frameworks and code coverage frameworks
+Many unit testing frameworks exist for JavaScript. An (incomplete) list of frameworks is available at [wikipedia](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript).
+
+[This section](./jasmine/README.md) covers the unit testing framework [jasmine](http://jasmine.github.io/) in more detail and shows some basic examples, but also advanced features.
 
 #Best Practices
 TODO

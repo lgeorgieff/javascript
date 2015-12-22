@@ -209,3 +209,19 @@ describe('Demonstrates the nesting of specs.', () => {
         });
     });
 });
+
+describe('Demonstrates a pending test spec.', () => {
+    xit('This spec is pending and so ignored!', () => {
+        fail('This should not be called!');
+    });
+
+    it('This spec will be run.', () => {
+        expect(true).toBeTruthy();
+    });
+});
+
+xdescribe('This is a pending test suite which will not be run at all.', () => {
+    it('This spec is located in a pending and so ignored test suite!', () => {
+        fail('This should not be called!');
+    });
+});

@@ -27,9 +27,6 @@ let testObject = {
     getValue () {
         return this._value;
     },
-    getThis () {
-        return this;
-    }
 };
 
 describe('Show the basic configuration of a spy.', () => {
@@ -56,16 +53,32 @@ describe('Show the basic configuration of a spy.', () => {
     });
 
     it('Demonstrate how a spy is set up, used and checked for its parameters when being invoked.', () => {
+        const TEST_VALUE = 123;
         spyOn(testObject, 'setValue');
         expect(testObject.setValue).not.toHaveBeenCalled();
-        expect(testObject.setValue(123)).toBeUndefined();
+        expect(testObject.setValue(TEST_VALUE)).toBeUndefined();
         // The spy defined via onSpy creates a separate object that is used for checking wheter it was called or not,
-        // i.e. the real implementation is nver invoked. In the case of testObject.setValue(123) it means that the
-        // property _value was never changed and still is 0.
+        // i.e. the real implementation is nver invoked. In the case of testObject.setValue(TEST_VALUE) it means that
+        // the property _value was never changed and still is 0.
         expect(testObject._value).toEqual(0);
         expect(testObject.setValue).toHaveBeenCalled();
-        expect(testObject.setValue).toHaveBeenCalledWith(123);
+        expect(testObject.setValue).toHaveBeenCalledWith(TEST_VALUE);
         // If more than one argument is used in the spied function, .toHaveBeenCalledwith(arg1, arg2, ...argN) can be
         // used.
+    });
+});
+
+describe('Using a spy with .and.callThrough()', () => {
+    it('Uses .and.callThrough() to invoke the real implementation of a spy.', () => {
+        const TEST_VALUE = 45;
+        spyOn(testObject, 'setValue').and.callThrough();
+        expect(testObject.setValue).not.toHaveBeenCalled();
+        // The real implementation of testObject.setValue() is used here, i.e. the real return value is returned after
+        // the actual funciton invocation.
+        expect(testObject.setValue(TEST_VALUE)).toEqual(testObject);
+        // Since .and.callThrough() enforces the invocation of the real implementation of a spy, the property _value is
+        // set to TEST_VALUE.
+        expect(testObject._value).toEqual(TEST_VALUE);
+        expect(testObject.setValue).toHaveBeenCalledWith(TEST_VALUE);
     });
 });

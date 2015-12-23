@@ -120,3 +120,18 @@ describe('Demonstrates how to use faked return values with jasmine.', () => {
         expect(testObject._value).toEqual(0);
     });
 });
+
+describe('Demonstrates how to use a fake implementation on a spied function', () => {
+    it('Shows how to use .and.callFake()', () => {
+        const TEST_VALUE = 345;
+        spyOn(testObject, 'setValue').and.callFake((arg) => {
+            testObject._value = arg;
+            return testObject;
+        });
+        expect(testObject._value).toEqual(0);
+        expect(testObject.setValue).not.toHaveBeenCalled();
+        expect(testObject.setValue(TEST_VALUE)).toEqual(testObject);
+        expect(testObject.setValue).toHaveBeenCalled();
+        expect(testObject._value).toEqual(TEST_VALUE);
+    });
+});

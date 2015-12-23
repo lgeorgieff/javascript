@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/22/2015
+// Last modified: 12/23/2015
 // Description: Shows the how to use spies offered by the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -26,8 +26,12 @@ let testObject = {
     },
     getValue () {
         return this._value;
-    },
+    }
 };
+
+beforeEach(() => {
+    testObject._value = 0;
+});
 
 describe('Show the basic configuration of a spy.', () => {
     it('Demonstrate how a spy is set up and used.', () => {
@@ -80,5 +84,39 @@ describe('Using a spy with .and.callThrough()', () => {
         // set to TEST_VALUE.
         expect(testObject._value).toEqual(TEST_VALUE);
         expect(testObject.setValue).toHaveBeenCalledWith(TEST_VALUE);
+    });
+});
+
+
+describe('Demonstrates how to use faked return values with jasmine.', () => {
+    it('Shows the basic usage of .and.returnValue().', () => {
+        spyOn(testObject, 'getValue').and.returnValue(testObject._value);
+        expect(testObject.getValue).not.toHaveBeenCalled();
+        expect(testObject.getValue()).toEqual(testObject._value);
+        expect(testObject.getValue).toHaveBeenCalled();
+    });
+
+    it('Shows that the call of .and.returnValue() is a fake call and is side-effect free.', () => {
+        const TEST_VALUE = 123;
+        spyOn(testObject, 'getValue').and.returnValue(TEST_VALUE);
+        expect(testObject._value).toEqual(0);
+        expect(testObject.getValue).not.toHaveBeenCalled();
+        expect(testObject.getValue()).toEqual(TEST_VALUE);
+        expect(testObject._value).toEqual(0);
+        expect(testObject.getValue).toHaveBeenCalled();
+    });
+
+    it('Shows that the call of .and.returnValues() is a fake call and is side-effect free.', () => {
+        const TEST_VALUES = [2, 3, 4];
+        spyOn(testObject, 'getValue').and.returnValues(TEST_VALUES[0], TEST_VALUES[1], TEST_VALUES[2]);
+        expect(testObject.getValue).not.toHaveBeenCalled();
+        expect(testObject._value).toEqual(0);
+        for(let testValue of TEST_VALUES) {
+            expect(testObject.getValue()).toEqual(testValue);
+            expect(testObject.getValue).toHaveBeenCalled();
+            expect(testObject._value).toEqual(0);
+        }
+        expect(testObject.getValue()).toBeUndefined();
+        expect(testObject._value).toEqual(0);
     });
 });

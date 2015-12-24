@@ -72,10 +72,30 @@ If code changes broke some tests, test suites and test specs can be set in pendi
 
 
 ## Setup and Teardown
+To eliminate duplicate code before each and/or after each test, [jasmine](http://jasmine.github.io/) offers the possibility to register so-called setup and teardown functions. Therefore [jasmine](http://jasmine.github.io/) provides the following functions:
+* beforeEach (handler)
+* afterEach (handler)
+* beforeAll (handler)
+* afterAll (handler)
+
+Each handler may execute any code that can be used to perform some preparation before a test or some cleanup after a test.
+* Handlers registered via _beforeEach_ are invoked before each spec.
+* Handlers registered via _afterEach_ are invoked after each spec.
+* Handlers registered via _beforeAll_ are invoked before the first spec is invoked.
+* Handlers registered via _afterAll_ are invoked after the last spec was run.
+
+It is possible to register several handlers via each of the four presented registration functions. The order of the invocation sequence of registered handlers corresponds to the order of the handler registration. If _beforeEach_ and _beforeAll_ handlers are registered, the handlers registered via _beforeAll_ are invoked first.
+
+All setup and teardown handlers may be registered in the test file (outside of any test suite) or within a test suite. Handlers registered in the test file are globally valid, i.e. for each test suite. Handlers registered inside a test suite are valid only for specs included in this test suite.
+
+An example of setup and teardown functions is available in the file [setup_and_teardown.spec.js](./setup_and_teardown.spec.js).
+
+## This context
 TODO: ...
 
 ## Asnychronous Tests
 TODO: ...
+TODO: async setup & teardown ...
 
 ## Spies
 TODO: ...

@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/23/2015
+// Last modified: 12/24/2015
 // Description: Shows the how to use spies offered by the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -111,7 +111,7 @@ describe('Demonstrates how to use faked return values with jasmine.', () => {
         spyOn(testObject, 'getValue').and.returnValues(TEST_VALUES[0], TEST_VALUES[1], TEST_VALUES[2]);
         expect(testObject.getValue).not.toHaveBeenCalled();
         expect(testObject._value).toEqual(0);
-        for(let testValue of TEST_VALUES) {
+        for (let testValue of TEST_VALUES) {
             expect(testObject.getValue()).toEqual(testValue);
             expect(testObject.getValue).toHaveBeenCalled();
             expect(testObject._value).toEqual(0);
@@ -143,5 +143,56 @@ describe('Demonstrates how to fake an exception in a spied function.', () => {
         expect(testObject.setValue).not.toHaveBeenCalled();
         expect(() => testObject.setValue(TEST_VALUE)).toThrowError(Error);
         expect(testObject.setValue).toHaveBeenCalled();
+    });
+});
+
+describe('Demonstrates how to use the .calls property of a spy.', () => {
+    const TEST_VALUES = [1, 4, 7, 8];
+
+    beforeEach(() => {
+        spyOn(testObject, 'setValue').and.callThrough();
+    });
+
+    it('Shows how to use the basic .calls.X() properties of a spy.', () => {
+        expect(testObject.setValue).not.toHaveBeenCalled();
+        expect(testObject.setValue.calls.any()).toEqual(false);
+        expect(testObject.setValue.calls.count()).toEqual(0);
+        for (let pos = 0; pos !== TEST_VALUES.length; ++pos) {
+            testObject.setValue(TEST_VALUES[pos]);
+            expect(testObject.setValue).toHaveBeenCalled();
+            expect(testObject.setValue.calls.any()).toEqual(true);
+            expect(testObject.setValue.calls.count()).toEqual(pos + 1);
+            for (let argsPos = 0; argsPos <= pos; ++argsPos) {
+                expect(testObject.setValue.calls.argsFor(argsPos).length).toEqual(1);
+                expect(testObject.setValue.calls.argsFor(argsPos)[0]).toEqual(TEST_VALUES[argsPos]);
+                
+            }
+        }
+        expect(testObject.setValue.calls.allArgs()).toEqual([[1], [4], [7], [8]]);
+    });
+
+    it('Shows how to get information about all invocations of a spied function.', () => {
+        expect(testObject.setValue).not.toHaveBeenCalled();
+        for (let testValue of TEST_VALUES) testObject.setValue(testValue);
+        expect(testObject.setValue).toHaveBeenCalled();
+        
+        console.dir(testObject.setValue.calls.all());
+        expect(testObject.setValue.calls.all().length).toEqual(4);
+        for (let pos = 0; pos !== TEST_VALUES.length; ++pos) {
+            expect(testObject.setValue.calls.all()[pos].object).toEqual(testObject);
+            expect(testObject.setValue.calls.all()[pos].args).toEqual([TEST_VALUES[pos]]);
+            expect(testObject.setValue.calls.all()[pos].returnValue).toEqual(testObject);
+        }
+
+        expect(testObject.setValue.calls.mostRecent().object).toEqual(testObject);
+        expect(testObject.setValue.calls.mostRecent().args).toEqual([TEST_VALUES[TEST_VALUES.length - 1]]);
+        expect(testObject.setValue.calls.mostRecent().returnValue).toEqual(testObject);
+
+        expect(testObject.setValue.calls.first().object).toEqual(testObject);
+        expect(testObject.setValue.calls.first().args).toEqual([TEST_VALUES[0]]);
+        expect(testObject.setValue.calls.first().returnValue).toEqual(testObject);
+
+        testObject.setValue.calls.reset();
+        expect(testObject.setValue).not.toHaveBeenCalled();
     });
 });

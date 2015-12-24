@@ -1,8 +1,8 @@
 # This Repository
-This repository covers some interesting code snippets for learning JavaScript and Node.js. In addition several HOWTOs and tool descriptions are available.
+This repository covers some interesting code snippets for learning JavaScript and [node.js](https://nodejs.org/en/). In addition several HOWTOs and tool descriptions are available.
 
-# Node.js
-This section provides some JavaScript snippets that are special to Node.js. Node.js is a JavaScript runtime environment that is used for server-side JavaScript execution and is based on Google's [V8](https://code.google.com/p/v8/) JavaScript engine.
+# node.js
+This section provides some JavaScript snippets that are special to [node.js](https://nodejs.org/en/). [node.js](https://nodejs.org/en/) is a JavaScript runtime environment that is used for server-side JavaScript execution and is based on Google's [V8](https://code.google.com/p/v8/) JavaScript engine.
  1. [modules](node.js/000_modules/README.md)
  1. [debugging and profiling](node.js/010_debugging/README.md)
  1. [assert](node.js/020_assertions/README.md)

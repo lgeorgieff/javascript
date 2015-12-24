@@ -1,12 +1,12 @@
 # Debugging JavaScript via V8-Debugger
 
-node.js exposes an API for the V8 debugger. This document covers the most important functionality of the debugger. A full documentation is avalable as part of the [node.js documentation](https://nodejs.org/api/debugger.html).
+[node.js](https://nodejs.org/en/) exposes an API for the V8 debugger. This document covers the most important functionality of the debugger. A full documentation is avalable as part of the [node.js documentation](https://nodejs.org/api/debugger.html).
 
-To start the debugger of node.js you must pass the argument _debug_, e.g. _node debug test.js_. It will stop execution at the first statement in the script.
+To start the debugger of [node.js](https://nodejs.org/en/) you must pass the argument _debug_, e.g. _node debug test.js_. It will stop execution at the first statement in the script.
 
-To set some breakpoints in a script enter _debugger;_ into the places where you want the debugger to do a break. Note: the execution will be only stopped at these points when the node.js runtime is started with the _debug_ argument. A sample file that can be used for debugging is [test_1.js](test_1.js) it includes [test_2.js](test_2.js) where a breakpoint is defined.
+To set some breakpoints in a script enter _debugger;_ into the places where you want the debugger to do a break. Note: the execution will be only stopped at these points when the [node.js](https://nodejs.org/en/) runtime is started with the _debug_ argument. A sample file that can be used for debugging is [test_1.js](test_1.js) it includes [test_2.js](test_2.js) where a breakpoint is defined.
 
-The next chapters describe the options that are available in the debugger, i.e. for executing them just enter them into the node.js' debugger terminal.
+The next chapters describe the options that are available in the debugger, i.e. for executing them just enter them into the [node.js](https://nodejs.org/en/)' debugger terminal.
 
 ## help
 Print a message that contains all available options/commands. Usually the set of options that is described in the following chapters.
@@ -72,7 +72,7 @@ Displays a list of all breakpoints when entered into the debugger terminal.
 Displays the version of v8 when entered into the debugger terminal.
 
 ## Useful Modules
-In addition to the node.js/V8 debugger there are also some node.js moduels and functions which can be useful for debugging:
+In addition to the node.js/V8 debugger there are also some [node.js](https://nodejs.org/en/) moduels and functions which can be useful for debugging:
 * [util](../050_utilities/README.md), especially the [degublog](../050_utilities/README.md#utildebuglogsection) function
 * [console](https://nodejs.org/api/console.html)
 

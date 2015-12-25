@@ -125,7 +125,51 @@ In addition to the _done_ parameter, [jasmine](http://jasmine.github.io/) offers
 Examples of asynchronous tests and of tests using [jasmine](http://jasmine.github.io/)'s clock implementation are available in the file [async.spec.js](./async.spec.js).
 
 ## Spies
-TODO: ...
+In [jasmine](http://jasmine.github.io/) a spy can be used for stubbing and tracking functions and its parameters. Spies exist only in test suites and test specs, i.e. they can be defined directly inside _describe_, _it_ or in _beforeEach_ and _afterEach_ located inside _describe_.
+
+A spy is created via the function _spyOn_ offered by [jasmine](http://jasmine.github.io/).
+
+```javascript
+describe('My test suite', () => {
+    it('A spec that uses a spy.', () => {
+        spyOn(contextOfFunction, 'spiedFunctionName');
+        expect(contextOfFunction.spiedFunctionName).not.toHaveBeenCalled();
+        contextOfFunction.spiedFunctionName();
+        expect(contextOfFunction.spiedFunctionName).toHaveBeenCalled();
+    });
+});
+```
+
+With the matchers _toHaveBeenCalled_ and _toHaveBeenCalledWith_ it is possible whether the spied function was called and with which arguments it was called.
+
+_spyOn_ creates an object that tracks all the calls of the function specified. But it only stubs the original function, i.e. the original function is never invoked. But [jasmine](http://jasmine.github.io/) offers further functionality to adapt spies:
+* _callThrough()_
+* _returnValue(theReturnValue)_
+* _returnValues(arrayWithReturnValues)_
+* _callFake(fakeImplementationOfFunction)_
+* _throwError(errorToBeThrown)_
+
+```javascript
+describe('My test suite', () => {
+    it('A spec that uses a spy and forwards the call to the real implementation', () => {
+        // Call the real implementation of contextOfFunction.spiedFunctionName.
+        spyOn(contextOfFunction, 'spiedFunctionName').and.callThrough();
+    });
+});
+```
+
+In addition spies offer a property called _calls_. It allows to get even more information about the spied function, such as a history of all parameters, this-context, etc. for all invocations.
+
+* _any()_
+* _count()_
+* _argsFor(index)_
+* _allArgs()_
+* _all()_
+* _mostRecent()_
+* _first()_
+* _reset()_
+
+Examples of spies are available in the file [spies.spec.js](./spies.spec.js).
 
 ## Custom Matchers
 TODO: ...

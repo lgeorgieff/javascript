@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/24/2015
+// Last modified: 12/25/2015
 // Description: Shows the how to use spies offered by the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -176,7 +176,6 @@ describe('Demonstrates how to use the .calls property of a spy.', () => {
         for (let testValue of TEST_VALUES) testObject.setValue(testValue);
         expect(testObject.setValue).toHaveBeenCalled();
         
-        console.dir(testObject.setValue.calls.all());
         expect(testObject.setValue.calls.all().length).toEqual(4);
         for (let pos = 0; pos !== TEST_VALUES.length; ++pos) {
             expect(testObject.setValue.calls.all()[pos].object).toEqual(testObject);

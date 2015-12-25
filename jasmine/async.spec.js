@@ -1,6 +1,6 @@
 // ====================================================================================================================
 // Copyright (C) 2015  Lukas Georgieff
-// Last modified: 12/21/2015
+// Last modified: 12/25/2015
 // Description: Shows the possibilities of time-dependent and async testing of the unit testing framework jasmine.
 // ====================================================================================================================
 
@@ -85,8 +85,8 @@ describe('Test async setup, teardown and spec functions', () => {
 
     it('Tests setTimeout with done() and done.fail()', (done) => {
         expect(hasBeenCalled).toEqual(2);
-        setTimeout(() => done(), TIMEOUT);
-        setTimeout(() => done.fail('This callback should be be called!'), TIMEOUT + 1000);
+        setTimeout(done, TIMEOUT);
+        setTimeout(() => done.fail('This callback should not be called!'), TIMEOUT + 2000);
     });
 
     it('Tests afterEach', (done) => {

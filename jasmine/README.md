@@ -70,7 +70,6 @@ Since test suites and test specs are normal functions, they can be nested. An ex
 ### Pending Tests
 If code changes broke some tests, test suites and test specs can be set in pending state, i.e. [jasmine](http://jasmine.github.io/) ignores them during a test run. When the code or the tests are adapted to the latest changes, the tests can be transformed back into non-pending state. To transfer a test suite into pending state, use _xdescribe_ instead of _describe_. To transfer a test spec into pending state, use _xit_ instead _it_. Examples are available in the file [basics.spec.js](./basics.spec.js) in line [213](./basics.spec.js#L213) and in line [223](./basics.spec.js#L223). The advantage of using pending test suites and specs is that they are still taken into account by [jasmine](http://jasmine.github.io/), i.e. after each run [jasmine](http://jasmine.github.io/) notifies the developer about pending test suites and specs. So the developer will not forget the disabled tests.
 
-
 ## Setup and Teardown
 To eliminate duplicate code before each and/or after each test, [jasmine](http://jasmine.github.io/) offers the possibility to register so-called setup and teardown functions. Therefore [jasmine](http://jasmine.github.io/) provides the following functions:
 * beforeEach (handler)
@@ -99,9 +98,31 @@ If a _this_ property is defined in a test spec it is not shared between other te
 
 Several examples can be found in the file [this.spec.js](./this.spec.js).
 
-## Asnychronous Tests
-TODO: ...
-TODO: async setup & teardown ...
+## Asynchronous Tests
+Since JavaScript as language is asynchronous, a suitable testing framework should support asynchronous testing. [jasmine](http://jasmine.github.io/) offers the possibility to use asynchronous test specs, setup and teardown functions.
+
+The handler passed to a test spec may contain a parameter - usually it is named _done_. This parameter is set by [jasmine](http://jasmine.github.io/) and may be used for asynchronous testing. I.e. after all asynchronous functions are passed _done_ can be used to signal [jasmine](http://jasmine.github.io/) that the functions were already executed.
+
+```javascript
+describe('My test suite', () => {
+    it('My asynchronous test spec', (done) => {
+        setTimeout(() => {
+            // perform some tests
+            done();
+        }, 1000);
+    });
+});
+```
+
+If an asynchronous function should not be called at all, _done.fail()_ may be used to enforce that the test spec fails.
+
+The _done_ parameter can be used for all handlers registered via _it_, _beforeEach_, _afterEach_, _beforeAll_ and _afterAll_.
+
+If an asynchronous function fails and _done()_ is not called in the failing function, [jasmine](http://jasmine.github.io/) waits until the timeout defined by _jasmine.DEFAULT_TIMEOUT_INTERVAL_ expires. If some asynchronous function, e.g. for I/O takes longer for a specific functionality, the timeout _jasmine.DEFAULT_TIMEOUT_INTERVAL_ may be increased.
+
+In addition to the _done_ parameter, [jasmine](http://jasmine.github.io/) offers the possibility of a clock implementation. This clock implementation can be used to simulate the clock on which timers depend on. Before a clock can be used, it must be installed via _jasmine.clock().install();_. After the clock-dependent tests are finished, the clock should be uninstalled via _jasmine.clock().uninstall();_. To move the clock forward, the function _jasmine.clock().tick(ticks);_ must be used.
+
+Examples of asynchronous tests and of tests using [jasmine](http://jasmine.github.io/)'s clock implementation are available in the file [async.spec.js](./async.spec.js).
 
 ## Spies
 TODO: ...

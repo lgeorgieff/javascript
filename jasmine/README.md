@@ -172,9 +172,47 @@ In addition spies offer a property called _calls_. It allows to get even more in
 Examples of spies are available in the file [spies.spec.js](./spies.spec.js).
 
 ## Custom Matchers
-TODO: ...
+Custom matchers can be defined to check expectations easier and focused on custom project needs. A custom matcher is provided by a property of an object. Each property represents a custom matcher.
 
-## Advanced Configuration
-TODO: ...
+```javascript
+let customMatchers = {
+    alwaysTrue (util, customEqualityTesters) {
+        return {
+            compare (actual, expected) {
+                return {
+                    pass: true
+                };
+            },
+            negativeCompare (actual, expected) {
+                return {
+                    pass: true
+                };
+            }
+        };
+    },
+    toBeTrue (util, customEqualityTesters) {
+        return {
+            compare (actual, expected) {
+                return {
+                    pass: actual === true
+                };
+            }
+        };
+    }
+};
+```
+
+Each matcher factory, i.e. _alwaysTrue_ and _toBeTrue_ in the previous example takes two arguments which contains additional function from [jasmine](http://jasmine.github.io/) that can be used for comparisons. The actual comparison is done in an inner object's property called _compare_. It takes the actual and the expected value. The return value is again an object. This object has a property called pass, which references the result of the comparison. For the negative comparison (i.e. with X.not.Y) this result is negotiated in the default case. But it is also possible to implement a function called _negativeCompare_ which may define custom semantics for negative comparisons. This is demonstrated in the _alwaysTrue_ matcher. It will always return true, i.e. in cases without the _.not_ and in cases with the _.not_ property.
+
+Finally the custom matchers must be registered.
+
+```javascript
+beforeEach(function() {
+    jasmine.addMatchers(customMatchers);
+});
+```
+
+An example with custom matchers is available in the file [custom_matchers.spec.js](./custom_matchers.spec.js);
+
 
 For more information on [jasmine](http://jasmine.github.io/) take a look at the [official documentation](http://jasmine.github.io/edge/introduction.html).

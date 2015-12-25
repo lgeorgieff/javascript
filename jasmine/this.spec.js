@@ -66,8 +66,8 @@ beforeEach(function () {
 });
 
 afterEach(function () {
-    // This handler is applied after each spec. But we will not encounter its side effects, since before the next spec
-    // invocation the this object is created from scratch.
+    // This handler is applied after each spec. But we will not encounter its side effects, since afterEach and afterAll
+    // have no effect on the this object
     this.testValue = -100;
 });
 

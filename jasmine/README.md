@@ -90,8 +90,14 @@ All setup and teardown handlers may be registered in the test file (outside of a
 
 An example of setup and teardown functions is available in the file [setup_and_teardown.spec.js](./setup_and_teardown.spec.js).
 
-## This context
-TODO: ...
+## This Context
+[jasmine](http://jasmine.github.io/) offers the possibility to use the _this_ keyword to share variables in the functions _beforeEach_, _beforeAll_ and _it_. 
+
+If a _this_ property is defined in a _beforeEach_ or _beforeAll_ handler outside of _describe_, the defined _this_ property is visible in all test specs of a test file. If a _this_ property is defined in a _beforeEach_ or _beforeAll_ handler inside of _describe_, the defined _this_ property is visible in all test specs inside the _describe_ function.
+
+If a _this_ property is defined in a test spec it is not shared between other test specs inside a test suite.
+
+Several examples can be found in the file [this.spec.js](./this.spec.js).
 
 ## Asnychronous Tests
 TODO: ...

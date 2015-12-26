@@ -212,7 +212,7 @@ beforeEach(function() {
 });
 ```
 
-An example with custom matchers is available in the file [custom_matchers.spec.js](./custom_matchers.spec.js);
+An example with custom matchers is available in the file [custom_matchers.spec.js](./custom_matchers.spec.js).
 
 
 For more information on [jasmine](http://jasmine.github.io/) take a look at the [official documentation](http://jasmine.github.io/edge/introduction.html).

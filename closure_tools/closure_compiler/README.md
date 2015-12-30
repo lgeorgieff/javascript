@@ -157,3 +157,16 @@ java -jar compiler.jar \
   --js ./src/dependency2.js \
   --js_output_file=./build/out.js
 ```
+
+### Closure Modules
+The source files are compiled as modules. The configuration defines which source file belongs into which module. It is important to list all source files in dependency order. The switch _--module_ defines the modules, bundles the source files and defines the dependencies between the modules.
+
+```shell
+java -jar compiler.jar \
+  --js ./src/main.js \
+  --js ./src/dependency1.js \
+  --js ./src/dependency2.js \
+  --module dependencies:2 \               # bundles the first 2 source files into the module "dependencies"
+  --module entry:1:dependencies \         # bundles 1 file into the module "entry" which depends on the module "dependencies"
+  --module_output_path_prefix=./build/    # all modules will be prefixed by "./build/"
+```

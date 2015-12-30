@@ -137,3 +137,23 @@ The [closure compiler](https://developers.google.com/closure/compiler/) supports
 In general all code is compiled into _stdout_. If _--js&#95;output&#95;file=out.js_ is specified, the code is compiled into the file _out.js_.
 
 For more information about compiling modules with [closure compiler](https://developers.google.com/closure/compiler/) take a look at https://github.com/google/closure-compiler/wiki/Working-With-Multiple-Module-Systems.
+
+## Compilation Examples
+The following files should be compiled:
+
+1. ./src/main.js
+2. ./src/dependency1.js
+3. ./src/dependency2.js
+
+[1] depends on [2] and [3]. [2] and [3] do not depend on other source files.
+
+### Default Example
+The code is be compiled into the file _./build/out.js_.
+
+```shell
+java -jar compiler.jar \
+  --js ./src/main.js \
+  --js ./src/dependency1.js \
+  --js ./src/dependency2.js \
+  --js_output_file=./build/out.js
+```

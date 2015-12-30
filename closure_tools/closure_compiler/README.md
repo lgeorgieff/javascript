@@ -126,3 +126,14 @@ To make [JSDoc](https://github.com/jsdoc3/jsdoc) understanding the [closure comp
 
 # Reasons to Avoid the closure compiler in ADVANCED_OPTIMIZATIONS Mode
 [This article](http://webreflection.blogspot.de/2013/01/5-reasons-to-avoid-closure-compiler-in.html) describes why not to use the [closure compiler](https://developers.google.com/closure/compiler/) in advanced mode. Well I have a different opinion since for every problem that is mentioned there a solution exists. Indeed, you have to think about the way you code and adopt it to the [closure compiler](https://developers.google.com/closure/compiler/). You should think aboud what you want to gain from the [closure compiler](https://developers.google.com/closure/compiler/), what you really get and what you have to invest!
+
+# Modules
+The [closure compiler](https://developers.google.com/closure/compiler/) supports several types of modules:
+* [ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+* [Common JS](http://www.commonjs.org/)
+* [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
+* [closure-library](https://github.com/google/closure-library/wiki/goog.module:-an-ES6-module-like-alternative-to-goog.provide)
+
+In general all code is compiled into _stdout_. If _--js&#95;output&#95;file=out.js_ is specified, the code is compiled into the file _out.js_.
+
+For more information about compiling modules with [closure compiler](https://developers.google.com/closure/compiler/) take a look at https://github.com/google/closure-compiler/wiki/Working-With-Multiple-Module-Systems.

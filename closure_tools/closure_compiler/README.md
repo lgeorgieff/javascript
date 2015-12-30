@@ -170,3 +170,22 @@ java -jar compiler.jar \
   --module entry:1:dependencies \         # bundles 1 file into the module "entry" which depends on the module "dependencies"
   --module_output_path_prefix=./build/    # all modules will be prefixed by "./build/"
 ```
+
+### CommonJS Modules
+The following example processes [Common JS](http://www.commonjs.org/) modules. All resulting code is compiled into the file _./build/out.js_. The advantage of using this configuration is that name clashes in different files (which are different modules in this case nad have own scopes) does not raise errors but are handled correctly by the [closure compiler](https://developers.google.com/closure/compiler/). It is necessary to define the entry module.
+
+```shell
+java -jar compiler.jar \
+  --js ./src/main.js \
+  --js ./src/dependency1.js \
+  --js ./src/dependency2.js \
+  --common_js_entry_module=./src/main.js \
+  --process_common_js_modules \
+  --js_output_file=./build/out.js
+```
+
+When using the switch _--module=auto_ each CommonJS module is compiled into each own module. In this case also the switch _--module&#95;output&#95;path&#95;prefix=./build/_ can be used to define a common module prefix.
+
+The switches _--js&#95;module&#95;root=./src/_ and _--common&#95;js&#95;module_path_prefix=./src/_ have the purpose to remove the common prefix from the entire module name respectively path. I.e. the file _./src/dependency1.js_ corresponds to the module _./src/dependency1_. If _--js_module_root=./src/_ or _--common&#95;js&#95;module_path_prefix=./src/_ is set, the module will be set to _./dependency1_.
+
+If a project uses both [Common JS](http://www.commonjs.org/) and [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) modules, the switch _--transform&#95;amd&#95;modules_ can be used to transform all [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) modules to [Common JS](http://www.commonjs.org/) modules.

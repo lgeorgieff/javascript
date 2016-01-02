@@ -166,9 +166,12 @@ java -jar compiler.jar \
   --js ./src/main.js \
   --js ./src/dependency1.js \
   --js ./src/dependency2.js \
-  --module dependencies:2 \               # bundles the first 2 source files into the module "dependencies"
-  --module entry:1:dependencies \         # bundles 1 file into the module "entry" which depends on the module "dependencies"
-  --module_output_path_prefix=./build/    # all modules will be prefixed by "./build/"
+ # bundles the first 2 source files into the module "dependencies"
+  --module dependencies:2 \
+ # bundles 1 file into the module "entry" which depends on the module "dependencies"
+  --module entry:1:dependencies \
+ # all modules will be prefixed by "./build/"
+  --module_output_path_prefix=./build/
 ```
 
 ### CommonJS Modules

@@ -1,2 +1,2 @@
-erroneous.js:2  variable iDoesNotExist is undeclared
-advanced_optimizations_export.js:32  variable module is undeclared
+erroneous.js:  variable iDoesNotExist is undeclared
+advanced_optimizations_export.js:  variable module is undeclared

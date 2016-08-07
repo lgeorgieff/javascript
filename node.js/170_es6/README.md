@@ -172,3 +172,8 @@ ES5 allows nested function declarations but does not allow function declarations
 ES6 in contrast permits function declaration in block scopes. A function declared inside a block scope is hoisted within the block scope but it is not visible outside the block scope.
 
 You can find an example of a function declaration inside a block scope at [block_level_function_declaration.js](./block_level_function_declaration.js).
+
+#Proxies
+Proxies hide the real JS object and define an additional layer to manipulate the plain JS object.
+
+You can find some examples of using proxies [proxies.js](./proxies.js).

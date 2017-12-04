@@ -1,0 +1,30 @@
+{
+  "name": "typescript-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "dependencies": {
+    "typescript": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.2",
+    "@types/node": "^8.0.54",
+    "jasmine": "^2.8.0",
+    "jasmine-ts-console-reporter": "^3.1.0"
+  },
+  "test": "npm run test_jasmine && npm run test_mocha",
+  "scripts": {
+    "pretest": "npm run build",
+    "clean": "rm -rf ./build 2> /dev/null",
+    "build_src": "tsc --project src/tsconfig.json",
+    "build_test": "tsc --project test/tsconfig.json",
+    "prebuild": "npm run clean",
+    "build": "npm run build_test && npm run build_src",
+    "prestart": "npm run build",
+    "start": "node build/main.js",
+    "test_jasmine": "JASMINE_CONFIG_PATH=./test/jasmine/jasmine.json ./node_modules/jasmine/bin/jasmine.js",
+    "test_mocha": "echo 'not implemented yet' && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

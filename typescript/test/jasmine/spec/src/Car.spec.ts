@@ -59,6 +59,14 @@ describe("Class Car", () => {
 	    expect(bmw.isRunning).toBeFalsy();
 	});
 
+	it("works correctly if in driving state", () => {
+	    bmw.drive(5);
+	    bmw.stop = jasmine.createSpy("stop").and.callThrough();
+	    bmw.switchOff();
+	    expect(bmw.stop).toHaveBeenCalled();
+	    expect(bmw.isRunning).toBeFalsy();
+	});
+
 	it("throws in case the car is already switched off", () => {
 	    bmw.switchOff();
 	    expect(() => bmw.switchOff()).toThrow(jasmine.any(Error));

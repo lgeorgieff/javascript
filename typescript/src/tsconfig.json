@@ -1,14 +1,17 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": true,
-	"target": "ES5",
-	"outDir": "../build/src"
-    },
-    "include": [
-      "./**/*"
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "outDir": "../build/src",
+    "types": [
+      "../node_modules/@types/node"
     ]
+  },
+  "include": [
+    "./**/*"
+  ]
 }

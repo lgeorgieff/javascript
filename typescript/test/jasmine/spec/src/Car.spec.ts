@@ -61,7 +61,7 @@ describe("Class Car", () => {
 
 	it("works correctly if in driving state", () => {
 	    bmw.drive(5);
-	    bmw.stop = jasmine.createSpy("stop").and.callThrough();
+            spyOn(bmw, 'stop').and.callThrough();
 	    bmw.switchOff();
 	    expect(bmw.stop).toHaveBeenCalled();
 	    expect(bmw.isRunning).toBeFalsy();
